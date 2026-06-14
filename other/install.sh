@@ -24,12 +24,12 @@ fi
 # Paketlisten installieren (vorab prüfen, ob die Dateien existieren)
 if [[ -f "pkglist.txt" ]]; then
     echo "==> Installiere offizielle Pakete aus pkglist.txt..."
-    sudo pacman -S --needed --noconfirm - < "other/pkglist.txt"
+    sudo pacman -S --needed --noconfirm - < pkglist.txt
 fi
 
 if [[ -f "aurlist.txt" ]]; then
     echo "==> Installiere AUR-Pakete aus aurlist.txt..."
-    yay -S --needed --noconfirm - < "other/aurlist.txt"
+    yay -S --needed --noconfirm - < aurlist.txt
 fi
 
 # DOTFILES MIT GNU STOW VERLINKEN (Ersetzt die fehleranfällige cp-Schleife)
