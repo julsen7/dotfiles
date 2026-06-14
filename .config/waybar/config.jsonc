@@ -1,0 +1,222 @@
+{
+  "layer": "top",
+  "modules-left": [
+    "custom/arch-icon",
+    "group/hardware",
+    "tray"
+  ],
+  "modules-center": [
+    "clock",
+    "mpris",
+    "custom/weather"
+    // "custom/timer"
+  ],
+  "modules-right": [
+    // "custom/updates",
+    "group/audio",
+    "group/connections",
+    "group/charger",
+    "custom/logout"
+  ],
+  // --- LEFT ---
+  // CUSTOM-ARCH-ICON
+  "custom/arch-icon": {
+    "format": "󰣇",
+    "on-click": "kitty",
+    "tooltip": false
+  },
+  // SYSTEM-GROUP
+  "group/hardware": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/cpu",
+      "custom/gpu",
+      "memory",
+      "disk"
+    ]
+  },
+  // CUSTOM-CPU
+  "custom/cpu": {
+    "exec": "echo \"{\\\"text\\\":\\\" $((100 - $(vmstat | tail -1 | awk '{print $15}')))%\\\",\\\"tooltip\\\":\\\"CPU Temp: $(sensors | grep -E '(Core 0|Tctl|Tdie)' | head -n 1 | awk '{print $2}' | tr -d '+')\\\"}\"",
+    "format": "{}",
+    "on-click": "kitty --title=btop -e btop",
+    "return-type": "json",
+    "interval": 10
+  },
+  // CUSTOM-GPU
+  "custom/gpu": {
+    "exec": "echo \"{\\\"text\\\":\\\"|  $(cat /sys/class/hwmon/hwmon*/device/gpu_busy_percent 2>/dev/null || echo 0)%\\\",\\\"tooltip\\\":\\\"GPU Temp: $(( $(cat /sys/devices/pci0000:00/0000:00:08.1/0000:04:00.0/hwmon/hwmon3/temp1_input 2>/dev/null || echo 0) / 1000 ))°C\\\"}\"",
+    "format": "{}",
+    "on-click": "kitty --title=radeontop -e radeontop",
+    "return-type": "json",
+    "interval": 10
+  },
+  // MEMORY
+  "memory": {
+    "format": "|  {percentage}%",
+    "on-click": "kitty --title=btop -e btop",
+    "interval": 10
+  },
+  // DISK
+  "disk": {
+    "format": "|  {specific_used:0.0f}/{specific_free:0.0f}GB",
+    "unit": "GB",
+    "interval": 10
+  },
+  // NETWORK-SPEED
+  "network#speed": {
+    "interval": 10,
+    "format": "| ⇣ {bandwidthDownBytes} ⇡ {bandwidthUpBytes}",
+    "format-disconnected": "─ B/s",
+    "tooltip": false
+  },
+  // TRAY
+  "tray": {
+    "spacing": 10,
+    "show-passive-items": true
+  },
+  // --- CENTER ---
+  // CLOCK
+  "clock": {
+    "tooltip": false
+  },
+  // MPRIS
+  "mpris": {
+    "format": "{player_icon} {status_icon} {title} - {artist} <span color='#808080'>{position}|{length}</span>",
+    "interval": 1,
+    "max-length": 40,
+    "status-icons": {
+      "playing": "",
+      "paused": ""
+    },
+    "player-icons": {
+      "spotify": "󰓇",
+      "chromium": ""
+    }
+  },
+  // CUSTOM-WEATHER
+  "custom/weather": {
+    "exec": "~/.config/waybar/weather.sh",
+    "format": "{}",
+    "return-type": "json",
+    "interval": 1800,
+    "tooltip": true
+  },
+  // CUSTOM-TIMER
+  "custom/timer": {
+    "exec": "~/.config/waybar/timer.sh",
+    "format": "{}",
+    "return-type": "json",
+    "on-click": "~/.config/waybar/timer.sh toggle",
+    "restart-interval": 0
+  },
+  // --- RIGHT ---
+  // CUSTOM-UPDATES
+  "custom/updates": {
+    "exec": "~/.config/waybar/check-updates.sh",
+    "format": " {}",
+    "return-type": "json",
+    "interval": 1800,
+    "signal": 8,
+    "on-click": "~/.config/waybar/install-updates.sh"
+  },
+  // AUDIO-GROUP
+  "group/audio": {
+    "orientation": "horizontal",
+    "modules": [
+      "wireplumber",
+      "pulseaudio/slider",
+      "wireplumber#source"
+    ]
+  },
+  // WIREPLUMBER
+  "wireplumber": {
+    "format": "{icon}",
+    "format-muted": "",
+    "format-icons": [
+      "",
+      "",
+      ""
+    ],
+    "on-click": "wpctl set-mute @DEFAULT_SINK@ toggle",
+    "on-click-right": "exec kitty --title=wiremix -e wiremix"
+  },
+  // PULSEAUDIO-SLIDER
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "horizontal"
+  },
+  // WIREPLUMBER-SOURCE
+  "wireplumber#source": {
+    "node-type": "Audio/Source",
+    "format": "",
+    "format-muted": "",
+    "on-click": "wpctl set-mute @DEFAULT_SOURCE@ toggle",
+    "on-click-right": "exec kitty --title=wiremix -e wiremix",
+    "scroll-step": 0
+  },
+  // CONNECTIONS-GROUP
+  "group/connections": {
+    "orientation": "horizontal",
+    "modules": [
+      "bluetooth",
+      "network"
+    ]
+  },
+  // BLUETOOTH
+  "bluetooth": {
+    "format": "󰂯 {num_connections}",
+    "on-click": "exec kitty --title=bluetui -e bluetui",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}"
+  },
+  // NETWORK
+  "network": {
+    "format": "",
+    "format-ethernet": "󰌗",
+    "format-wifi": "",
+    "tooltip-format": "{essid} {signalStrength}%\n {bandwidthDownBytes}  {bandwidthUpBytes}",
+    "tooltip-format-disconnected": "",
+    "on-click": "exec kitty --title=nmtui-go -e nmtui-go",
+    "interval": 30
+  },
+  // GROUP-CHARGER
+  "group/charger": {
+    "orientation": "horizontal",
+    "modules": [
+      "power-profiles-daemon",
+      "battery"
+    ]
+  },
+  // POWER-PROFILES-DAEMON
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "format-icons": {
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
+  },
+  // BATTERY
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  // CUSTOM-LOGOUT
+  "custom/logout": {
+    "format": "⏻",
+    "on-click": "wlogout",
+    "tooltip": false
+  }
+}

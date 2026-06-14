@@ -1,0 +1,85 @@
+@import url("../../.cache/wal/colors-waybar.css");
+
+* {
+  font-family: "JetBrainsMono Nerd Font Propo";
+  font-size: 18px;
+  background: transparent;
+}
+
+tooltip {
+  background: @background;
+  border-radius: 10px;
+}
+
+#custom-arch-icon,
+#hardware,
+#tray,
+#clock,
+#mpris,
+#custom-weather,
+#custom-timer,
+#custom-updates,
+#audio,
+#connections,
+#charger,
+#custom-logout {
+  border-radius: 20px;
+  background-color: @background;
+  margin: 4px 4px;
+  padding: 0px 10px;
+  color: @foreground;
+}
+
+#custom-arch-icon {
+  color: #1793d1;
+}
+
+#mpris {
+  color: @color5;
+}
+
+#custom-cpu,
+#custom-gpu,
+#memory,
+#bluetooth,
+#power-profiles-daemon {
+  margin-right: 15px;
+}
+
+#pulseaudio-slider slider {
+  min-height: 0px;
+  min-width: 0px;
+  opacity: 0;
+  background-image: none;
+  border: none;
+  box-shadow: none;
+}
+
+#pulseaudio-slider trough {
+  min-height: 10px;
+  min-width: 80px;
+  border-radius: 5px;
+}
+
+#pulseaudio-slider highlight {
+  border-radius: 5px;
+  background-color: @color4;
+}
+
+#battery.charging {
+  color: #50fa7b;
+}
+
+#cpu.warning,
+#memory.warning,
+#custom-updates.has-updates,
+#battery.warning {
+  color: #f1fa8c;
+}
+
+#cpu.critical,
+#memory.critical,
+#custom-updates.fw-updates,
+#battery.critical {
+  color: #ff5555;
+}

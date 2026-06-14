@@ -1,0 +1,29 @@
+{
+  "logo": {
+    "type": "small",
+    "color": {
+      "1": "37",
+      "2": "35"
+    }
+  },
+  "display": {
+    "separator": " ",
+    "color": {
+      "keys": "35",
+      "title": "33",
+      "output": "37"
+    },
+    "key": {
+      "width": 16,
+      "type": "string"
+    }
+  },
+  "modules": [
+    "Title",
+    "DateTime",
+    "OS",
+    "Packages",
+    "Terminal",
+    "Shell"
+  ]
+}
