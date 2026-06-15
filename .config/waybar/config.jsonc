@@ -63,13 +63,6 @@
     "unit": "GB",
     "interval": 10
   },
-  // NETWORK-SPEED
-  "network#speed": {
-    "interval": 10,
-    "format": "| ⇣ {bandwidthDownBytes} ⇡ {bandwidthUpBytes}",
-    "format-disconnected": "─ B/s",
-    "tooltip": false
-  },
   // TRAY
   "tray": {
     "spacing": 10,

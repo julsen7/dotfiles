@@ -65,7 +65,7 @@ if [[ -f ~/dotfiles/config.ini ]]; then
 fi
 
 echo "==> Aktiviere Systemd-Dienste..."
-for service in NetworkManager bluetooth.service ly.service ufw.service power-profiles-daemon.service; do
+for service in NetworkManager bluetooth.service ly@tty1.service ufw.service power-profiles-daemon.service; do
     if systemctl list-unit-files | grep -q "^$service"; then
         sudo systemctl enable "$service"
     else

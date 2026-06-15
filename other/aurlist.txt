@@ -1,9 +1,0 @@
-adwaita-qt5-git
-adwaita-qt6-git
-bibata-cursor-git
-gnome-themes-extra-gtk2
-heroic-games-launcher-bin
-nmtui-go
-visual-studio-code-bin
-wlogout
-yay
