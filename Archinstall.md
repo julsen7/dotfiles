@@ -1,17 +1,3 @@
-- [!] manuell installiert ([Wiki](https://wiki.archlinux.org/title/Installation_guide) + [User setup](https://wiki.archlinux.org/title/General_recommendations)), dann:
-- systemd-boot, enable systemd lan und wifi + config für dns auflösung
-- base, linux, linux-firmware, nano, sudo, stow
-- git, base-devel
-- git clone https://github.com/julsen/dotfiles
-- cd dotfiles
-- stow .
-
-# SKRIPT
-- multilib aktivieren
-- clone https://aur.archlinux.org/yay.git
-- cd yay
-- makepkg -si
-
 # Kernel & System-Basics
 amd-ucode
 efibootmgr

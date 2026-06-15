@@ -1,0 +1,5 @@
+- wlogout
+- waybar: updates, timer colors
+- win + p-ähnliches projezieren
+- [clipboardhistory](https://wiki.archlinux.org/title/Clipboard)
+- bluetooth-tethering

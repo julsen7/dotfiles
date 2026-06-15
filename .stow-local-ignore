@@ -1,29 +1,11 @@
-# ~./dotfiles/.stow.local.ignore: Files to be ignored by gnu 'stow'
-#
-# Comments and blank lines are allowed.
-#
-# See 'info stow' section "4 Ignore Lists" for more information
+# ~./dotfiles/.stow.local.ignore
 
-RCS
-.+,v
-
-CVS
-\.\#.+       # CVS conflict files / emacs lock files
-\.cvsignore
-
-\.svn
-_darcs
-\.hg
-
+# Standard-Ignorierte Dateien
 \.git
 \.gitignore
 
-.+~          # emacs backup files
-\#.*\#       # emacs autosave files
+# Alle Markdown-Dokumente im Hauptverzeichnis ignorieren
+^.*\.md$
 
-^/README.*
-^/LICENSE.*
-^/COPYING
-
-# other
+# Den gesamten Installations-Ordner ignorieren
 ^other/
