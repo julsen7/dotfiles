@@ -28,7 +28,6 @@ hyprpaper
 hyprpicker
 hyprshot
 hyprpolkitagent
-wlogout
 xdg-desktop-portal-hyprland
 xdg-desktop-portal-gtk
 
@@ -92,6 +91,7 @@ visual-studio-code-bin
 bibata-cursor-git
 heroic-games-launcher-bin
 nmtui-go
+wlogout
 gnome-themes-extra-gtk2
 adwaita-qt5-git
 adwaita-qt6-git

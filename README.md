@@ -16,7 +16,7 @@ Complete the manual base installation and create a non-root user with sudo privi
 ### 2. Install Required Packages
 Ensure you are logged into your new system and install the necessary base utilities:
 ```bash
-sudo pacman -S base linux linux-firmware nano sudo stow
+sudo pacman -S base linux linux-firmware nano sudo
 sudo pacman -S --needed git base-devel
 ```
 
