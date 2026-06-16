@@ -75,7 +75,7 @@ passwd
 # 1. Bootloader installieren & NVRAM-Schreiben im Chroot erzwingen
 bootctl install --variables=yes
 chmod 700 /boot
-echo -e "timeout 3\narchitecture auto" > /boot/loader/loader.conf
+echo -e "timeout 3" > /boot/loader/loader.conf
 
 # 2. Kernel-Parameter vollautomatisiert übergeben (Verzeichnis-Erstellung erzwungen)
 mkdir -p /etc/kernel
