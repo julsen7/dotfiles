@@ -77,7 +77,7 @@ bootctl install
 echo "timeout 3" > /boot/loader/loader.conf
 
 # 2. Kernel-Parameter vollautomatisiert übergeben
-echo "root=PARTUUID=\$(blkid -s PARTUUID -o value /dev/nvme0n1p3) rw" > /etc/kernel/cmdline
+echo "root=PARTUUID=$(blkid -s PARTUUID -o value /dev/nvme0n1p3) rw" > /etc/kernel/cmdline
 
 # 3. mkinitcpio für die automatische UKI-Erstellung konfigurieren
 sed -i 's/#default_uki=/default_uki=/g' /etc/mkinitcpio.d/linux.preset
