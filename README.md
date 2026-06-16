@@ -141,6 +141,8 @@ ping -c 3 google.com
 Execute your deployment scripts directly within your personal home directory.
 
 ```bash
+su - julsen
+
 git clone https://github.com/julsen7/dotfiles ~/dotfiles
 cd ~/dotfiles
 chmod +x install.sh
