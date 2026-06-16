@@ -1,61 +1,151 @@
-# Arch Linux Post-Installation Setup
+# Arch Linux Installation & Post-Setup Guide
 
-This guide helps you set up a fresh Arch Linux installation, configure the network, and deploy your dotfiles using GNU Stow.
-
-## Prerequisites
-
-### 1. Base Installation & User Setup
-Complete the manual base installation and create a non-root user with sudo privileges.
-* 📖 [Arch Linux Installation Guide](https://wiki.archlinux.org/title/Installation_guide)
-* 📖 [General Recommendations & User Setup](https://wiki.archlinux.org/title/General_recommendations)
+This guide covers the manual base installation of Arch Linux and the automated deployment of system configuration files using GNU Stow.
 
 ---
 
-## Step-by-Step Configuration
+## 1. Base Installation (Arch ISO)
 
-### 2. Install Required Packages
-Ensure you are logged into your new system and install the necessary base utilities:
+Boot from your Arch Linux live media and complete these initial configuration steps.
+
+### Keyboard & Time
 ```bash
-sudo pacman -S base linux linux-firmware nano sudo
-sudo pacman -S --needed git base-devel
+loadkeys de-latin1
+cat /sys/firmware/efi/fw_platform_size # Should return 64
+timedatectl set-ntp true
 ```
 
-### 3. Network Configuration (systemd-networkd)
-Enable and configure the built-in systemd network daemon for wired connections.
+### Network Configuration (WIFI)
+*Skip this step if you are using a wired Ethernet connection.*
+```bash
+iwctl station wlan0 connect <SSID> --passphrase <password>
+ping -c 3 google.com
+```
 
-1. Enable the network and DNS services:
-   ```bash
-   sudo systemctl enable --now systemd-networkd
-   sudo systemctl enable --now systemd-resolved
-   ```
-2. Create a network configuration file:
-   ```bash
-   sudo nano /etc/systemd/network/20-wire.network
-   ```
-3. Paste the following configuration to enable DHCP on all Ethernet interfaces:
-   ```ini
-   [Match]
-   Name=en*
+### Drive Partitioning & Formatting
+```bash
+# Partition drive /dev/nvme0n1 using fdisk:
+# Press 'g' to create a new GPT partition table.
+# Press 'n' -> 1 -> Enter -> +1G -> 't' -> 1 (EFI system partition)
+# Press 'n' -> 2 -> Enter -> +4G -> 't' -> 2 -> 19 (Linux swap)
+# Press 'n' -> 3 -> Enter -> Enter (Linux root partition)
+# Press 'w' to write changes and exit.
+fdisk /dev/nvme0n1
 
-   [Network]
-   DHCP=yes
-   ```
-4. Verify your internet connection:
-   ```bash
-   ping -c 3 google.com
-   ```
+# Create file systems
+mkfs.fat -F 32 /dev/nvme0n1p1
+mkswap /dev/nvme0n1p2
+mkfs.ext4 /dev/nvme0n1p3
+
+# Mount file systems
+mount /dev/nvme0n1p3 /mnt
+mount --mkdir /dev/nvme0n1p1 /mnt/boot
+swapon /dev/nvme0n1p2
+```
+
+### System Pacstrap & Chroot
+```bash
+pacstrap -K /mnt base linux linux-firmware nano sudo
+genfstab -U /mnt >> /mnt/etc/fstab
+arch-chroot /mnt
+```
+
+### Base Configuration (Inside Chroot)
+```bash
+# Time zone
+ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime
+hwclock --systohc
+
+# Localization (Uncomment de_DE.UTF-8 UTF-8 in /etc/locale.gen first)
+nano /etc/locale.gen
+locale-gen
+
+# System files
+echo "LANG=de_DE.UTF-8" > /etc/locale.conf
+echo "KEYMAP=de-latin1" > /etc/vconsole.conf
+echo "archlinux" > /etc/hostname
+
+# Initramfs & Root Password
+mkinitcpio -P
+passwd
+```
+
+### Bootloader Setup (systemd-boot)
+```bash
+bootctl install
+
+# Configure loader settings
+cat <<EOF > /boot/loader/loader.conf
+default arch.conf
+timeout 3
+console-mode max
+EOF
+
+# Copy the PARTUUID output from this command for the next step:
+blkid -s PARTUUID -o value /dev/nvme0n1p3
+
+# Create the boot entry (Replace <UUID> with the output from above)
+cat <<EOF > /boot/loader/entries/arch.conf
+title   Arch Linux
+linux   /vmlinuz-linux
+initrd  /initramfs-linux.img
+options root=PARTUUID=<UUID> rw
+EOF
+```
+
+### Finalize Installation
+```bash
+exit
+umount -R /mnt
+reboot
+```
 
 ---
 
-## Dotfiles & Software Deployment
+## 2. Post-Installation Configuration
 
-### 4. Clone and Run the Installation Script
-Clone your personal configuration files into your home directory and execute the custom post-install script. 
+Log into your fresh system installation as `root` to configure your main environment.
 
-The script will automatically enable the **Multilib Repository**, install all official and AUR packages from your list, link your configurations via **GNU Stow**, and enable your system services.
+### Core Utilities
+```bash
+pacman -S --needed git base-devel
+```
+
+### Wired Network Service (systemd-networkd)
+```bash
+systemctl enable --now systemd-networkd
+systemctl enable --now systemd-resolved
+
+# Create network configuration profile
+cat <<EOF > /etc/systemd/network/20-wire.network
+[Match]
+Name=en*
+
+[Network]
+DHCP=yes
+EOF
+
+ping -c 3 google.com
+```
+
+### Create System User
+```bash
+# Create user with wheel group access
+useradd -m -G wheel <your_username>
+passwd <your_username>
+
+# Uncomment the "%wheel ALL=(ALL:ALL) ALL" line to grant sudo access
+EDITOR=nano visudo
+```
+
+---
+
+## 3. Dotfiles & Software Deployment
+
+Log out of the root user account, sign back into your newly created personal profile, and execute your deployment scripts.
 
 ```bash
-git clone https://github.com/julsen7/dotfiles
+git clone https://github.com/julsen7/dotfiles ~/dotfiles
 cd ~/dotfiles
 chmod +x install.sh
 ./install.sh

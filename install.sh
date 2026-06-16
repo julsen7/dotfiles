@@ -3,9 +3,9 @@
 set -euo pipefail
 
 DOTFILES_DIR="$(dirname "$(readlink -f "$0")")"
-MD_FILE="$DOTFILES_DIR/Archinstall.md"
+MD_FILE="$DOTFILES_DIR/Packages.md"
 
-echo "==> Starte vollautomatische Post-Installation..."
+echo "==> Starte Installation..."
 
 if grep -q "^#\[multilib\]" /etc/pacman.conf; then
     echo "==> Aktiviere Multilib-Repository..."
@@ -27,7 +27,7 @@ if ! command -v yay &> /dev/null; then
 fi
 
 if [[ -f "$MD_FILE" ]]; then
-    echo "==> Lese Paketliste aus Archinstall.md..."
+    echo "==> Lese Paketliste aus Packages.md..."
     
     PACMAN_PKGS=""
     AUR_PKGS=""
@@ -60,17 +60,24 @@ if [[ -f "$MD_FILE" ]]; then
         yay -S --needed --noconfirm $AUR_PKGS
     fi
 else
-    echo "[FEHLER] Archinstall.md wurde unter $MD_FILE nicht gefunden!"
+    echo "[ERROR] Packages.md nicht gefunden!"
     exit 1
 fi
 
 if [[ -d "$DOTFILES_DIR" ]]; then
     echo "==> Verlinke Dotfiles mit GNU Stow..."
     cd "$DOTFILES_DIR"
-    
     stow -R .
 else
-    echo "[WARNUNG] Dotfiles-Ordner nicht gefunden! Überspringe Stowing."
+    echo "[WARNUNG] Dotfiles-Ordner nicht gefunden! Überspringe."
+fi
+
+if [[ -f "$DOTFILES_DIR/config.ini" ]]; then
+    echo "==> Kopiere ly Configuration..."
+    sudo mkdir -p /etc/ly/
+    sudo cp "$DOTFILES_DIR/config.ini" /etc/ly/
+else
+    echo "[WARNUNG] Ly config.ini nicht gefunden! Überspringe."
 fi
 
 echo "==> Aktiviere Systemd-Dienste..."
@@ -81,6 +88,19 @@ for service in systemd-networkd.service systemd-resolved.service bluetooth.servi
         echo "[INFO] Dienst $service nicht gefunden. Überspringe."
     fi
 done
+
+WALLPAPER_DIR="$DOTFILES_DIR/wallpaper"
+
+if [[ -d "$DOTFILES_DIR" ]]; then
+    if [[ -f "$DOTFILES_DIR/wallpaper.webp" ]]; then
+        echo "==> Generiere Wallpaper-Theme ..."
+        wal -i "$WALLPAPER_DIR/wallpaper.webp"
+    else 
+        echo "[WARNUNG] Wallpaper nicht gefunden. Überspringe."
+    fi
+else
+    echo "[WARNUNG] Wallpaper-Ordner nicht gefunden! Überspringe."
+fi
 
 echo "========================================= "
 echo " Installation abgeschlossen! Starte neu."

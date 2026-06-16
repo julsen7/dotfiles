@@ -6,6 +6,3 @@
 
 # Alle Markdown-Dokumente im Hauptverzeichnis ignorieren
 ^.*\.md$
-
-# Den gesamten Installations-Ordner ignorieren
-^other/
