@@ -192,7 +192,7 @@ ping -c 3 google.com
 Log in as `julsen` and execute your deployment scripts directly within your personal home directory.
 
 ```bash
-pacman -S --needed git base-devel
+pacman -S --needed git base-devel stow
 git clone https://github.com/julsen7/dotfiles ~/dotfiles
 cd ~/dotfiles
 chmod +x install.sh
