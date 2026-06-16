@@ -1,5 +1,6 @@
 # System
 fwupd
+
 udisks2
 usb_modeswitch
 openssh
@@ -29,41 +30,39 @@ hyprlauncher
 hyprpaper
 hyprpicker
 hyprshot
+fastfetch
+starship
+python-pywal
+yazi
 
 hyprpolkitagent
 xdg-desktop-portal-hyprland
 xdg-desktop-portal-gtk
-
 
 # Fonts
 noto-fonts
 noto-fonts-emoji
 ttf-jetbrains-mono-nerd
 
-# Terminal-Tools, Shell & CLI-Apps
+# Shell, TUI & CLI-Apps
 zsh
 zsh-autosuggestions
 zsh-syntax-highlighting
-zoxide
-fzf
-eza
-fastfetch
-starship
-yazi
+
 btop
 radeontop
 bluetui
 wiremix
-7zip
-filezilla
+
+zoxide
+fzf
+eza
 # jq
 
 # Bibliotheken & System-Zusätze
-python-pywal
-piper
-openrgb
+7zip
 jdk-openjdk
-qt6ct
+# qt6ct
 
 # Apps
 chromium
@@ -72,6 +71,9 @@ spotify-launcher
 obs-studio
 steam
 easyeffects
+filezilla
+piper
+openrgb
 
 # YAY
 minecraft-launcher
