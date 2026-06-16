@@ -8,6 +8,31 @@ This guide covers the manual base installation of Arch Linux and the automated d
 
 Boot from your Arch Linux live media and complete these initial configuration steps.
 
+---
+
+## 1.1: archinstall
+keyboard layout de-latin1
+locale language de_DE.UTF-8
+disk configuration use best afford (1 efi, 4 swap, rest main) hauptfestplatte ext4 home-no
+swap enabled zstd
+bootloader systemd-boot uki enabled
+kernel linux
+hostname archlinux
+authentication rootpw
+user julsen <pw> sudo-yes
+profile minimal
+applications: bluetooth yes, audio pipewire, print no, power management power-profiles daemon, firewall ufw
+network configuration: copy iso network configuration
+pacman-color yes
+timezone: Europe/Berlin
+automatic time sync enabled
+install: yes
+wait ... reboot system
+
+---
+
+## 1.2: manually
+
 ### Keyboard & Time
 ```bash
 loadkeys de-latin1
@@ -140,10 +165,9 @@ ping -c 3 google.com
 
 ## 3. Dotfiles & Software Deployment
 
-Execute your deployment scripts directly within your personal home directory.
+Log in as `julsen` and execute your deployment scripts directly within your personal home directory.
 
 ```bash
-su - julsen
 pacman -S --needed git base-devel
 git clone https://github.com/julsen7/dotfiles ~/dotfiles
 cd ~/dotfiles
