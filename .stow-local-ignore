@@ -6,3 +6,4 @@
 
 # Alle Markdown-Dokumente im Hauptverzeichnis ignorieren
 ^.*\.md$
+^.*\.ini$
