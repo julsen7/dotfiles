@@ -41,7 +41,7 @@ mkfs.ext4 /dev/nvme0n1p3
 mount /dev/nvme0n1p3 /mnt
 mount --mkdir /dev/nvme0n1p1 /mnt/boot
 swapon /dev/nvme0n1p2
-lsblk # testing
+lsblk # for testing
 ```
 
 ### System Pacstrap & Chroot
@@ -67,33 +67,36 @@ echo "KEYMAP=de-latin1" > /etc/vconsole.conf
 echo "archlinux" > /etc/hostname
 
 # Initramfs & Root Password
-mkinitcpio -P
 passwd
 ```
 
-### Bootloader Setup (systemd-boot)
+### Bootloader Setup (systemd-boot mit UKI)
 ```bash
+# 1. Bootloader installieren (Auflösung wird automatisch nativ gesetzt)
 bootctl install
+echo "timeout 3" > /boot/loader/loader.conf
 
-# Configure loader settings
-nano /boot/loader/loader.conf
-default arch.conf
-timeout 3
-console-mode max # ? hier muss wieder der standard hin, weil schlechte auflösung
+# 2. Kernel-Parameter vollautomatisiert übergeben
+echo "root=PARTUUID=\$(blkid -s PARTUUID -o value /dev/nvme0n1p3) rw" > /etc/kernel/cmdline
 
-# Copy the PARTUUID output from this command for the next step:
-blkid -s PARTUUID -o value /dev/nvme0n1p3
+# 3. mkinitcpio für die automatische UKI-Erstellung konfigurieren
+sed -i 's/#default_uki=/default_uki=/g' /etc/mkinitcpio.d/linux.preset
+sed -i 's/#fallback_uki=/fallback_uki=/g' /etc/mkinitcpio.d/linux.preset
+sed -i 's/default_image=/#default_image=/g' /etc/mkinitcpio.d/linux.preset
+sed -i 's/fallback_image=/#fallback_image=/g' /etc/mkinitcpio.d/linux.preset
 
-# Create the boot entry (Replace <UUID> with the output from above)
-nano /boot/loader/entries/arch.conf
-title   Arch Linux
-linux   /vmlinuz-linux
-initrd  /initramfs-linux.img
-options root=PARTUUID=<UUID> rw
+# 4. Verzeichnis erstellen und Image generieren
+mkdir -p /boot/EFI/Linux
+mkinitcpio -P
+```
 
-# adduser
-useradd -m -g wheel -s /bin/bash julsen
+### Create System User & Sudo Access
+```bash
+# User direkt im Chroot erstellen
+useradd -m -G wheel -s /bin/bash julsen
 passwd julsen
+
+# %wheel Gruppe freischalten
 EDITOR=nano visudo
 ```
 
@@ -112,8 +115,6 @@ Log into your fresh system installation as `root` to configure your main environ
 
 ### Core Utilities
 ```bash
-
-
 pacman -S --needed git base-devel
 ```
 
@@ -123,32 +124,22 @@ systemctl enable --now systemd-networkd
 systemctl enable --now systemd-resolved
 
 # Create network configuration profile
-cat <<EOF > /etc/systemd/network/20-wire.network
+sudo bash -c 'cat <<EOF > /etc/systemd/network/20-wire.network
 [Match]
 Name=en*
 
 [Network]
 DHCP=yes
-EOF
+EOF'
 
 ping -c 3 google.com
-```
-
-### Create System User
-```bash
-# Create user with wheel group access
-useradd -m -G wheel <your_username>
-passwd <your_username>
-
-# Uncomment the "%wheel ALL=(ALL:ALL) ALL" line to grant sudo access
-EDITOR=nano visudo
 ```
 
 ---
 
 ## 3. Dotfiles & Software Deployment
 
-Log out of the root user account, sign back into your newly created personal profile, and execute your deployment scripts.
+Execute your deployment scripts directly within your personal home directory.
 
 ```bash
 git clone https://github.com/julsen7/dotfiles ~/dotfiles
