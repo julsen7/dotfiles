@@ -7,24 +7,19 @@ MD_FILE="$DOTFILES_DIR/Packages.md"
 
 echo "==> Starte Installation..."
 
-if grep -q "^#\[multilib\]" /etc/pacman.conf; then
     echo "==> Aktiviere Multilib-Repository..."
-    sudo sed -i '/^#\[multilib\]/,/^#Include = \/etc\/pacman.d\/mirrorlist/s/^#//' /etc/pacman.conf
-fi
+    nano sed -i '/\[multilib\]/,/Include/s/^#//' /etc/pacman.conf
+    
 
-echo "==> Aktualisiere System-Datenbanken..."
-sudo pacman -Syu --noconfirm
-
-echo "==> Installiere Basis-Abhängigkeiten..."
-sudo pacman -S --needed --noconfirm base-devel git stow
-
-if ! command -v yay &> /dev/null; then
     echo "==> Installiere yay (AUR-Helper)..."
     YAY_DIR=$(mktemp -d)
     git clone https://aur.archlinux.org/yay.git "$YAY_DIR"
     (cd "$YAY_DIR" && makepkg -si --noconfirm)
     rm -rf "$YAY_DIR"
 fi
+
+echo "==> Aktualisiere System-Datenbanken..."
+sudo pacman -Syu --noconfirm
 
 if [[ -f "$MD_FILE" ]]; then
     echo "==> Lese Paketliste aus Packages.md..."
