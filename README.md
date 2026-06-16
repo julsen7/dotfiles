@@ -129,7 +129,7 @@ Name=en*
 
 [Network]
 DHCP=yes
-EOF'
+EOF
 
 ping -c 3 google.com
 ```
