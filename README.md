@@ -84,6 +84,10 @@ echo "root=PARTUUID=$(blkid -s PARTUUID -o value /dev/nvme0n1p3) rw" > /etc/kern
 # 3. mkinitcpio für die automatische UKI-Erstellung konfigurieren
 # uncomment default_uki and fallback_uki and comment out default_image and fallback_image
 nano /etc/mkinitcpio.d/linux.preset
+# comment PRESETS with only default and uncomment default and fallback
+# comment default_image and uncomment default_uki
+# comment fallback_image and uncomment fallback_uki
+# change default_uki and fallback_uki paths from efi to /boot
 
 # 4. Verzeichnis erstellen, Image generieren und prüfen
 mkdir -p /boot/EFI/Linux
