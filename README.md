@@ -122,6 +122,8 @@ Log into your fresh system installation as `root` to configure your main environ
 ```bash
 systemctl enable --now systemd-networkd systemd-resolved
 
+ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
+
 # Create network configuration profile
 cat <<EOF > /etc/systemd/network/20-wire.network
 [Match]
