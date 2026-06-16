@@ -161,10 +161,6 @@ umount -R /mnt
 reboot
 ```
 
----
-
-## 2. Post-Installation Configuration
-
 Log into your fresh system installation as `root` to configure your main environment.
 
 ### Wired Network Service (systemd-networkd)
@@ -187,13 +183,13 @@ ping -c 3 google.com
 
 ---
 
-## 3. Dotfiles & Software Deployment
+## 2. Dotfiles & Software Deployment
 
 Log in as `julsen` and execute your deployment scripts directly within your personal home directory.
 
 ```bash
 pacman -S --needed git base-devel stow
-git clone https://github.com/julsen7/dotfiles ~/dotfiles
+git clone https://github.com/julsen7/dotfiles
 cd ~/dotfiles
 chmod +x install.sh
 ./install.sh
