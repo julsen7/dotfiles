@@ -29,6 +29,30 @@ automatic time sync enabled
 install: yes
 wait ... reboot system
 
+installiert automatisch dann:
+amd-ucode
+base
+base-devel
+bluez
+bluez-utils
+efibootmgr
+git
+gst-plugin-pipewire
+libpulse
+linux
+linux-firmware
+lcm2
+pipewire
+pipewire-alsa
+pipewire-jack
+pipewire-pulse
+power-profiles-daemon
+sof-firmware
+sudo
+ufw
+wireplumber
+zram-generator
+
 ---
 
 ## 1.2: manually
