@@ -9,14 +9,14 @@ openssh
 brightnessctl
 
 # Grafik & Treiber (AMD/NVIDIA)
-mesa
-lib32-mesa
-xf86-video-amdgpu
-vulkan-radeon
-lib32-vulkan-radeon
-nvidia-open
-lib32-nvidia-utils
-nvidia-prime
+# mesa
+# lib32-mesa
+# xf86-video-amdgpu
+# vulkan-radeon
+# lib32-vulkan-radeon
+# nvidia-open
+# lib32-nvidia-utils
+# nvidia-prime
 
 # ly & Hyprland & Wayland
 ly
