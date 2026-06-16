@@ -4,18 +4,22 @@ set -euo pipefail
 
 DOTFILES_DIR="$(dirname "$(readlink -f "$0")")"
 
-echo "==> Starte Installation..."
+echo "==> Starting Installation..."
 
-echo "==> Aktiviere Multilib-Repository..."
-nano sed -i '/\[multilib\]/,/Include/s/^#//' /etc/pacman.conf
+echo "==> Activating Multilib-Repository..."
+sudo sed -i '/\[multilib\]/,/Include/s/^#//' /etc/pacman.conf
 
-echo "==> Installiere yay (AUR-Helper)..."
+echo "==> Updating System-Databases..."
+sudo pacman -Syu --noconfirm
+
+cd /tmp
+if [ -d "yay" ]; then rm -rf yay; fi
 git clone https://aur.archlinux.org/yay.git
 cd yay
-makepkg -si
+makepkg -si --noconfirm
+fi
 
-echo "==> Aktualisiere System-Datenbanken..."
-sudo pacman -Syu --noconfirm
+cd "$DOTFILES_DIR"
 
 PACKAGE_FILE="packages.md"
 
@@ -24,11 +28,11 @@ if [ ! -f "$PACKAGE_FILE" ]; then
     exit 1
 fi
 
+echo "==> Installing packages from $PACKAGE_FILE..."
 while IFS= read -r line || [ -n "$line" ]; do
-    trimmed=$(echo "$line" | xargs)
+    trimmed=$(echo "$line" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')
 
     [[ -z "$trimmed" ]] && continue
-
     [[ "$trimmed" =~ ^# ]] && continue
 
     package=$(echo "$trimmed" | sed -E 's/^([-*]|([0-9]+\.))\s+//; s/`//g')
@@ -38,21 +42,27 @@ while IFS= read -r line || [ -n "$line" ]; do
 done < "$PACKAGE_FILE"
 echo "All packages processed!"
 
-
-echo "==> Verlinke Dotfiles mit GNU Stow..."
+echo "==> Linking Dotfiles with GNU Stow..."
 cd "$DOTFILES_DIR"
 stow -R .
 
 echo "==> Copy ly Configuration..."
 sudo mkdir -p /etc/ly/
-sudo cp "$DOTFILES_DIR/config.ini" /etc/ly/
+if [ -f "$DOTFILES_DIR/config.ini" ]; then
+    sudo cp "$DOTFILES_DIR/config.ini" /etc/ly/
+else
+    echo "Warning: config.ini not found in $DOTFILES_DIR!"
+fi
 
-echo "==> Aktiviere Systemd-Dienste..."
+echo "==> Activating Services..."
 sudo systemctl enable --now ly@tty1.service
 
-echo "==> Generiere Wallpaper-Theme ..."
-wal -i "wallpapers/wallpaper.webp"
-
+echo "==> Generating Wallpaper-Theme ..."
+if [ -f "wallpapers/wallpaper.webp" ]; then
+    wal -i "wallpapers/wallpaper.webp"
+else
+    echo "Warning: wallpapers/wallpaper.webp not found!"
+fi
 
 echo "===================================== "
 echo " Installation finished! Please reboot."
