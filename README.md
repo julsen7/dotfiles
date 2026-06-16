@@ -72,22 +72,23 @@ passwd
 
 ### Bootloader Setup (systemd-boot mit UKI)
 ```bash
-# 1. Bootloader installieren (Auflösung wird automatisch nativ gesetzt)
-bootctl install
-echo "timeout 3" > /boot/loader/loader.conf
+# 1. Bootloader installieren & NVRAM-Schreiben im Chroot erzwingen
+bootctl install --variables=yes
+chmod 700 /boot
+echo -e "timeout 3\narchitecture auto" > /boot/loader/loader.conf
 
-# 2. Kernel-Parameter vollautomatisiert übergeben
+# 2. Kernel-Parameter vollautomatisiert übergeben (Verzeichnis-Erstellung erzwungen)
+mkdir -p /etc/kernel
 echo "root=PARTUUID=$(blkid -s PARTUUID -o value /dev/nvme0n1p3) rw" > /etc/kernel/cmdline
 
 # 3. mkinitcpio für die automatische UKI-Erstellung konfigurieren
-sed -i 's/#default_uki=/default_uki=/g' /etc/mkinitcpio.d/linux.preset
-sed -i 's/#fallback_uki=/fallback_uki=/g' /etc/mkinitcpio.d/linux.preset
-sed -i 's/default_image=/#default_image=/g' /etc/mkinitcpio.d/linux.preset
-sed -i 's/fallback_image=/#fallback_image=/g' /etc/mkinitcpio.d/linux.preset
+# uncomment default_uki and fallback_uki and comment out default_image and fallback_image
+nano /etc/mkinitcpio.d/linux.preset
 
-# 4. Verzeichnis erstellen und Image generieren
+# 4. Verzeichnis erstellen, Image generieren und prüfen
 mkdir -p /boot/EFI/Linux
 mkinitcpio -P
+bootctl list
 ```
 
 ### Create System User & Sudo Access
