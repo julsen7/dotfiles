@@ -118,11 +118,6 @@ reboot
 
 Log into your fresh system installation as `root` to configure your main environment.
 
-### Core Utilities
-```bash
-pacman -S --needed git base-devel
-```
-
 ### Wired Network Service (systemd-networkd)
 ```bash
 systemctl enable --now systemd-networkd systemd-resolved
@@ -147,7 +142,7 @@ Execute your deployment scripts directly within your personal home directory.
 
 ```bash
 su - julsen
-
+pacman -S --needed git base-devel
 git clone https://github.com/julsen7/dotfiles ~/dotfiles
 cd ~/dotfiles
 chmod +x install.sh
