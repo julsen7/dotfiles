@@ -27,9 +27,9 @@ ping google.com
 fdisk /dev/nvme0n1
 # Partition drive /dev/nvme0n1 using fdisk:
 # Press 'g' to create a new GPT partition table.
-# Press 'n' -> 1 -> Enter -> +1G -> 't' -> 1 (EFI system partition)
+# Press 'n' -> 1 -> Enter -> +1G -> 't' -> 1 -> 1 (EFI System)
 # Press 'n' -> 2 -> Enter -> +4G -> 't' -> 2 -> 19 (Linux swap)
-# Press 'n' -> 3 -> Enter -> Enter (Linux root partition)
+# Press 'n' -> 3 -> Enter -> Enter -> 't' -> 3 -> 20 (Linux filesystem)
 # Press 'w' to write changes and exit.
 
 # Create file systems
@@ -41,6 +41,7 @@ mkfs.ext4 /dev/nvme0n1p3
 mount /dev/nvme0n1p3 /mnt
 mount --mkdir /dev/nvme0n1p1 /mnt/boot
 swapon /dev/nvme0n1p2
+lsblk # testing
 ```
 
 ### System Pacstrap & Chroot
@@ -75,22 +76,25 @@ passwd
 bootctl install
 
 # Configure loader settings
-cat <<EOF > /boot/loader/loader.conf
+nano /boot/loader/loader.conf
 default arch.conf
 timeout 3
-console-mode max
-EOF
+console-mode max # ? hier muss wieder der standard hin, weil schlechte auflösung
 
 # Copy the PARTUUID output from this command for the next step:
 blkid -s PARTUUID -o value /dev/nvme0n1p3
 
 # Create the boot entry (Replace <UUID> with the output from above)
-cat <<EOF > /boot/loader/entries/arch.conf
+nano /boot/loader/entries/arch.conf
 title   Arch Linux
 linux   /vmlinuz-linux
 initrd  /initramfs-linux.img
 options root=PARTUUID=<UUID> rw
-EOF
+
+# adduser
+useradd -m -g wheel -s /bin/bash julsen
+passwd julsen
+EDITOR=nano visudo
 ```
 
 ### Finalize Installation
@@ -108,6 +112,8 @@ Log into your fresh system installation as `root` to configure your main environ
 
 ### Core Utilities
 ```bash
+
+
 pacman -S --needed git base-devel
 ```
 
