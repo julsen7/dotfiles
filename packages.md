@@ -1,9 +1,15 @@
-# Kernel & System-Basics
+# System
 fwupd
 udisks2
 usb_modeswitch
 openssh
 brightnessctl
+
+# dark-mode
+gnome-themes-extra
+gnome-themes-extra-gtk2
+adwaita-qt5-git
+adwaita-qt6-git
 
 # Grafik & Treiber (AMD/NVIDIA)
 # mesa
@@ -14,7 +20,7 @@ brightnessctl
 # lib32-nvidia-utils
 # nvidia-prime
 
-# ly & Hyprland & Wayland
+# Oberfläche
 ly
 hyprland
 kitty
@@ -23,11 +29,11 @@ hyprlauncher
 hyprpaper
 hyprpicker
 hyprshot
+
 hyprpolkitagent
 xdg-desktop-portal-hyprland
 xdg-desktop-portal-gtk
 
-easyeffects
 
 # Fonts
 noto-fonts
@@ -48,10 +54,9 @@ btop
 radeontop
 bluetui
 wiremix
-gnome-themes-extra
 7zip
 filezilla
-jq
+# jq
 
 # Bibliotheken & System-Zusätze
 python-pywal
@@ -59,7 +64,6 @@ piper
 openrgb
 jdk-openjdk
 qt6ct
-gnome-themes-extra
 
 # Apps
 chromium
@@ -67,6 +71,7 @@ discord
 spotify-launcher
 obs-studio
 steam
+easyeffects
 
 # YAY
 minecraft-launcher
@@ -76,6 +81,3 @@ bibata-cursor-git
 heroic-games-launcher-bin
 nmtui-go
 wlogout
-gnome-themes-extra-gtk2
-adwaita-qt5-git
-adwaita-qt6-git
