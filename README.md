@@ -12,6 +12,7 @@ Boot from your Arch Linux live media and complete these initial configuration st
 
 ## 1.1: archinstall
 keyboard layout de-latin1
+```bash
 locale language de_DE.UTF-8
 disk configuration use best afford (1 efi, 4 swap, rest main) hauptfestplatte ext4 home-no
 swap enabled zstd
@@ -21,7 +22,7 @@ hostname archlinux
 authentication rootpw
 user julsen <pw> sudo-yes
 profile minimal
-applications: bluetooth yes, audio pipewire, print no, power management power-profiles daemon, firewall ufw
+applications: bluetooth yes, audio pipewire, print no, power management power-profiles daemon, firewall ufw, additional fonts noto-fonts noto-fonts-emoji
 network configuration: copy iso network configuration
 pacman-color yes
 timezone: Europe/Berlin
@@ -52,6 +53,7 @@ sudo
 ufw
 wireplumber
 zram-generator
+```
 
 ---
 
