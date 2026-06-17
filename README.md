@@ -192,7 +192,7 @@ Log in as `julsen` and execute your deployment scripts directly within your pers
 ```bash
 sudo pacman -S --needed git base-devel stow
 git clone https://github.com/julsen7/Dotfiles
-cd ~/dotfiles
+cd ~/Dotfiles
 chmod +x install.sh
 ./install.sh
 ```
