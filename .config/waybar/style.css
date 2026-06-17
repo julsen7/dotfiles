@@ -3,12 +3,12 @@
 * {
   font-family: "JetBrainsMono Nerd Font Propo";
   font-size: 18px;
-  background: transparent;
+  border-radius: 20px;
+  color: @foreground;
 }
 
-tooltip {
-  background: @background;
-  border-radius: 10px;
+#waybar {
+  background-color: transparent;
 }
 
 #custom-arch-icon,
@@ -23,19 +23,9 @@ tooltip {
 #connections,
 #charger,
 #custom-logout {
-  border-radius: 20px;
   background-color: @background;
   margin: 4px 4px;
   padding: 0px 10px;
-  color: @foreground;
-}
-
-#custom-arch-icon {
-  color: #1793d1;
-}
-
-#mpris {
-  color: @color5;
 }
 
 #custom-cpu,
@@ -58,26 +48,34 @@ tooltip {
 #pulseaudio-slider trough {
   min-height: 10px;
   min-width: 80px;
-  border-radius: 5px;
 }
 
 #pulseaudio-slider highlight {
-  border-radius: 5px;
   background-color: @color4;
+}
+
+#custom-arch-icon {
+  color: #1793d1;
+}
+
+#mpris {
+  color: @color5;
 }
 
 #battery.charging {
   color: #50fa7b;
 }
 
-#cpu.warning,
+#custom-cpu.warning,
+#custom-gpu.warning,
 #memory.warning,
 #custom-updates.has-updates,
 #battery.warning {
   color: #f1fa8c;
 }
 
-#cpu.critical,
+#custom-cpu.critical,
+#custom-gpu.critical,
 #memory.critical,
 #custom-updates.fw-updates,
 #battery.critical {
