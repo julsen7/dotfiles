@@ -3,5 +3,6 @@
 - win + p-ähnliches projizieren
 - bluetooth-tethering
 - [clipboardhistory](https://wiki.archlinux.org/title/Clipboard) cliphist
--  nvidia analog zu radeontop tui
--  fix instakll.sh pywal not generating waybar-colors.css
+- nvidia analog zu radeontop tui
+- fix instakll.sh pywal not generating waybar-colors.css
+- vscode settings & extensions inside .config
