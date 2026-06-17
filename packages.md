@@ -50,7 +50,12 @@ fzf
 # lib32-nvidia-utils
 # minecraft-launcher
 # heroic-games-launcher-bin
-# davinci-resolve
+#
+# davinci-resolve:
+# git clone https://aur.archlinux.org/davinci-resolve.git
+# linux-zip von blackmagic herunterladen und in geklonten ordner tun
+# makepkg -si (es fehlen gtk2, libpng12, qt5-webengine, qt6-websockets aus dem aur) -> diese zuerst über yay installieren
+#
 # modrinth-app
 
 # Not tryed
