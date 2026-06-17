@@ -15,8 +15,7 @@
     // "custom/updates",
     "group/audio",
     "group/connections",
-    "group/charger",
-    "custom/logout"
+    "group/charger"
   ],
   // --- LEFT ---
   // CUSTOM-ARCH-ICON
@@ -45,7 +44,7 @@
   },
   // CUSTOM-GPU
   "custom/gpu": {
-    "exec": "echo \"{\\\"text\\\":\\\"|  $(cat /sys/class/hwmon/hwmon*/device/gpu_busy_percent 2>/dev/null || echo 0)%\\\",\\\"tooltip\\\":\\\"GPU Temp: $(( $(cat /sys/devices/pci0000:00/0000:00:08.1/0000:04:00.0/hwmon/hwmon3/temp1_input 2>/dev/null || echo 0) / 1000 ))°C\\\"}\"",
+    "exec": "echo \"{\\\"text\\\":\\\"|  $(cat /sys/class/hwmon/hwmon4/device/gpu_busy_percent 2>/dev/null || echo 0)%\\\",\\\"tooltip\\\":\\\"GPU Temp: $(( $(cat /sys/class/hwmon/hwmon4/temp1_input 2>/dev/null || echo 0) / 1000 ))°C\\\"}\"",
     "format": "{}",
     "on-click": "kitty --title=radeontop -e radeontop",
     "return-type": "json",
@@ -205,11 +204,5 @@
       "",
       ""
     ]
-  },
-  // CUSTOM-LOGOUT
-  "custom/logout": {
-    "format": "⏻",
-    "on-click": "hyprctl dispatch exit",
-    "tooltip": false
   }
 }

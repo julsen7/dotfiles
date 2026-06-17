@@ -1,6 +1,5 @@
 - waybar: updates, timer colors
 - discord streaming (xdg-desktop-portal-hyprland)
 - win + p-ähnliches projizieren
-- [clipboardhistory](https://wiki.archlinux.org/title/Clipboard)
 - bluetooth-tethering
-- hyprland: logout icon should logout
+- [clipboardhistory](https://wiki.archlinux.org/title/Clipboard) cliphist
