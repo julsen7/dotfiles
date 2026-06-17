@@ -1,57 +1,62 @@
+mesa
+lib32-mesa
+vulkan-radeon
+lib32-vulkan-radeon
 fwupd
+udisks2
+udiskie
+brightnessctl
 ly
 hyprland
-kitty
-waybar
 hyprlauncher
 hyprpaper
 hyprpicker
 hyprshot
+hyprpolkitagent
+waybar
 fastfetch
 starship
-python-pywal
-yazi
-mesa (bereits per hyprland)
-lib32-mesa
-vulkan-radeon
-lib32-vulkan-radeon
-nvidia-open
-ttf-jetbrains-mono-nerd
+kitty
 zsh
 zsh-autosuggestions
 zsh-syntax-highlighting
-openssh
+python-pywal
+yazi
+ttf-jetbrains-mono-nerd
+bibata-cursor-git
 btop
 bluetui
 wiremix
 radeontop
+nmtui-go
+openssh
 7zip
 jdk-openjdk
 chromium
 discord
 spotify-launcher
-obs-studio
-steam
 texlive
-minecraft-launcher
-modrinth-app
 visual-studio-code-bin
-bibata-cursor-git
-nmtui-go
-heroic-games-launcher-bin
-brightnessctl
 eza
 zoxide
 fzf
-nvidia-prime
-hyprpolkitagent
-udisks2
-udiskie
-lib32-nvidia-utils
 
-davinci-resolve
-filezilla
-easyeffects
-piper
-openrgb
-xdg-desktop-portal-hyprland
+# Not for Dell
+
+# steam
+# obs-studio
+# nvidia-open
+# nvidia-prime
+# lib32-nvidia-utils
+# minecraft-launcher
+# heroic-games-launcher-bin
+# davinci-resolve
+# modrinth-app
+
+# Not tryed
+
+## filezilla
+## easyeffects
+## piper
+## openrgb
+## xdg-desktop-portal-hyprland

@@ -6,29 +6,30 @@ DOTFILES_DIR="$(dirname "$(readlink -f "$0")")"
 
 echo "==> Starting Installation..."
 
+if [ "$EUID" -eq 0 ]; then
+    echo "Error: No root allowed!"
+    exit 1
+fi
+
 echo "==> Activating Multilib-Repository..."
 sudo sed -i '/\[multilib\]/,/Include/s/^#//' /etc/pacman.conf
 
 echo "==> Updating System-Databases..."
 sudo pacman -Syu --noconfirm
 
+echo "==> Installing yay..."
 cd /tmp
-if [ -d "yay" ]; then rm -rf yay; fi
+rm -rf yay
 git clone https://aur.archlinux.org/yay.git
 cd yay
-if [ "$EUID" -eq 0 ]; then
-    chown -R nobody:nobody .
-    sudo -u nobody makepkg -si --noconfirm
-else
-    makepkg -si --noconfirm
-fi
-
+makepkg -si --noconfirm
 cd "$DOTFILES_DIR"
+rm -rf /tmp/yay
 
 PACKAGE_FILE="packages.md"
 
 if [ ! -f "$PACKAGE_FILE" ]; then
-    echo "Error: $PACKAGE_FILE not found."
+    echo "Error: $PACKAGE_FILE not found!"
     exit 1
 fi
 
@@ -61,13 +62,15 @@ fi
 echo "==> Activating Services..."
 sudo systemctl enable --now NetworkManager
 sudo systemctl enable --now ly@tty1.service
+systemctl --user enable --now hyprpolkitagent
 
 echo "==> Activating waybar scripts"
-cd ~/dotfiles/.config/waybar
-chmod +x weather.sh
-chmod +x timer.sh
-chmod +x check-updates.sh
-chmod +x install-updates.sh
+if [ -d "$DOTFILES_DIR/.config/waybar" ]; then
+    cd "$DOTFILES_DIR/.config/waybar"
+    chmod +x weather.sh timer.sh check-updates.sh install-updates.sh 2>/dev/null || echo "Warning: Some scripts are missing!"
+fi
+
+cd "$DOTFILES_DIR"
 
 echo "==> Generating Wallpaper-Theme ..."
 if [ -f "wallpapers/wallpaper.webp" ]; then
