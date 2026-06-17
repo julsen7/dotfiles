@@ -209,7 +209,7 @@
   // CUSTOM-LOGOUT
   "custom/logout": {
     "format": "⏻",
-    "on-click": "wlogout",
+    "on-click": "hyprctl dispatch exit",
     "tooltip": false
   }
 }

@@ -23,7 +23,7 @@ authentication rootpw
 user julsen <pw> sudo-yes
 profile minimal
 applications: bluetooth yes, audio pipewire, print no, power management power-profiles daemon, firewall ufw, additional fonts noto-fonts noto-fonts-emoji
-network configuration: copy iso network configuration
+network configuration: network manager
 pacman-color yes
 timezone: Europe/Berlin
 automatic time sync enabled

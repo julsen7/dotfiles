@@ -14,6 +14,8 @@ hl.monitor({
 
 hl.env("HYPRCURSOR_THEME", "Bibata-Modern-Ice")
 hl.env("HYPRCURSOR_SIZE", "24")
+hl.env("XCURSOR_THEME", "Bibata-Modern-Ice")
+hl.env("XCURSOR_SIZE", "24")
 hl.env("GTK_THEME", "Adwaita:dark")
 hl.env("GTK2_RC_FILES", "/usr/share/themes/Adwaita-dark/gtk-2.0/gtkrc")
 hl.env("QT_STYLE_OVERRIDE", "Adwaita-Dark")
@@ -29,11 +31,11 @@ end)
 hl.window_rule({ match = { class = "^(Spotify)$" }, workspace = "5 silent" })
 
 for i = 1, 3 do
-    hl.workspace_rule({ workspace = tostring(i), monitor = "HDMI-A-1", default = true, persistent = true })
+    hl.workspace_rule({ workspace = i, monitor = "HDMI-A-1", default = true, persistent = true })
 end
 
 for i = 4, 6 do
-    hl.workspace_rule({ workspace = tostring(i), monitor = "eDP-1", default = true, persistent = true })
+    hl.workspace_rule({ workspace = i, monitor = "eDP-1", default = true, persistent = true })
 end
 
 hl.config({

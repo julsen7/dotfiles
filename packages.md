@@ -38,7 +38,6 @@ modrinth-app
 visual-studio-code-bin
 bibata-cursor-git
 nmtui-go
-# wlogout
 heroic-games-launcher-bin
 brightnessctl
 eza
@@ -46,18 +45,12 @@ zoxide
 fzf
 nvidia-prime
 hyprpolkitagent
-
-
 udisks2
-usb_modeswitch
-gnome-themes-extra
-gnome-themes-extra-gtk2
-adwaita-qt5-git
-adwaita-qt6-git
+udiskie
 lib32-nvidia-utils
-xdg-desktop-portal-hyprland
-qt6ct
+
 filezilla
 easyeffects
 piper
 openrgb
+xdg-desktop-portal-hyprland

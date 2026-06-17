@@ -59,7 +59,15 @@ else
 fi
 
 echo "==> Activating Services..."
+sudo systemctl enable --now NetworkManager
 sudo systemctl enable --now ly@tty1.service
+
+echo "==> Activating waybar scripts"
+cd ~/dotfiles/.config/waybar
+chmod +x weather.sh
+chmod +x timer.sh
+chmod +x check-updates.sh
+chmod +x install-updates.sh
 
 echo "==> Generating Wallpaper-Theme ..."
 if [ -f "wallpapers/wallpaper.webp" ]; then
