@@ -1,5 +1,5 @@
 hl.monitor({
-    output   = "HDMI-1",
+    output   = "HDMI-A-1",
     mode     = "2560x1440@144",
     position = "0x0",
     scale    = "1",
@@ -8,7 +8,7 @@ hl.monitor({
 hl.monitor({
     output   = "eDP-1",
     mode     = "1920x1080@60",
-    position = "2560x0",
+    position = "2560x500",
     scale    = "1",
 })
 
@@ -27,6 +27,14 @@ hl.on("hyprland.start", function()
 end)
 
 hl.window_rule({ match = { class = "^(Spotify)$" }, workspace = "5 silent" })
+
+for i = 1, 3 do
+    hl.workspace_rule({ workspace = tostring(i), monitor = "HDMI-A-1", default = true, persistent = true })
+end
+
+for i = 4, 6 do
+    hl.workspace_rule({ workspace = tostring(i), monitor = "eDP-1", default = true, persistent = true })
+end
 
 hl.config({
     general = {
@@ -98,7 +106,7 @@ hl.bind("ALT + TAB", function()
     hl.dispatch(hl.dsp.window.bring_to_top())
 end)
 
-for i = 1, 5 do
+for i = 1, 6 do
     hl.bind("SUPER + " .. i, hl.dsp.focus({ workspace = i }))
     hl.bind("SUPER + SHIFT + " .. i, hl.dsp.window.move({ workspace = i }))
 end
