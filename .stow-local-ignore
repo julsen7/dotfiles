@@ -1,6 +1,6 @@
-# Ignore this file and the install script
-^install\.sh$
+# Ignore this file, the install script and the ly config.ini
 ^\.stow-local-ignore$
+^install\.sh$
 ^\.config.ini$
 
 # Ignore .git folder and .gitignore
