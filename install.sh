@@ -63,6 +63,7 @@ echo "==> Activating Services..."
 sudo systemctl enable NetworkManager
 sudo systemctl enable ly@tty1.service
 systemctl --user enable hyprpolkitagent
+udiskie &
 
 echo "==> Activating waybar scripts"
 if [ -d "$DOTFILES_DIR/.config/waybar" ]; then
