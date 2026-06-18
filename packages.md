@@ -43,6 +43,7 @@ visual-studio-code-bin
 eza
 zoxide
 fzf
+github-cli
 
 # Not for Dell
 
