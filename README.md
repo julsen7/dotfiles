@@ -58,28 +58,8 @@ zram-generator
 ---
 
 ## 1.2: manually
-follow LINK
 
-Log into your fresh system installation as `root` to configure your main environment.
-
-### Wired Network Service (systemd-networkd)
-```bash
-systemctl enable --now systemd-networkd systemd-resolved
-
-ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
-
-# Create network configuration profile
-cat <<EOF > /etc/systemd/network/20-wire.network
-[Match]
-Name=en*
-
-[Network]
-DHCP=yes
-EOF
-
-ping -c 3 google.com
-```
-
+Follow Instructions on [Arch Wiki](https://wiki.archlinux.org/title/Installation_guide)
 ---
 
 ## 2. Dotfiles & Software Deployment
