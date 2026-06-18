@@ -44,7 +44,6 @@ eza
 zoxide
 fzf
 github-cli
-gnome-keyring
 
 # steam
 # obs-studio
@@ -53,14 +52,14 @@ gnome-keyring
 # lib32-nvidia-utils
 # opencl-nvidia
 # lib32-opencl-nvidia
-# minecraft-launcher
 # modrinth-app
 # heroic-games-launcher-bin
 # piper
+# easyeffects
 # davinci-resolve (git clone https://aur.archlinux.org/davinci-resolve.git, linux-zip von blackmagic herunterladen und in geklonten ordner kopieren, makepkg -i, fehlendes über yay installieren ! https://mirror.cachyos.org/repo/x86_64/cachyos/ für qt5-webengine und dann "sudo pacman -U qt5-webengine-5.15.19-5.1-x86_64.pkg.tar.zst" im Downloadsordner, makepkg -i wiederholen)
 
 
 # paint.net alternative
 # filezilla
-# easyeffects
 # xdg-desktop-portal-hyprland
+# gnome-keyring
