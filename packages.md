@@ -1,16 +1,11 @@
 # Packages
 
-## Archinstall
+## Archinstall nicht im minimalistischen
 
-amd-ucode
-base
 bluez
 bluez-utils
-efibootmgr
 gst-plugin-pipewire
 libpulse
-linux
-linux-firmware
 networkmanager
 pipewire
 pipewire-alsa
@@ -18,11 +13,9 @@ pipewire-jack
 pipewire-pulse
 power-profiles-daemon
 sof-firmware
-sudo
 ufw
 wireplumber
 wpa_supplicant
-zram-generator
 
 ## Nach Hyprland-Wiki
 
