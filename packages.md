@@ -1,6 +1,6 @@
 # Packages
 
-## Archinstall FEHLEND!!!
+## Archinstall FEHLEN ignorieren hier!!!
 
 gst-plugin-pipewire
 libpulse
@@ -9,10 +9,9 @@ pipewire-jack
 pipewire-pulse
 sof-firmware
 
-## Nach Hyprland-Wiki
+## !!! Hier gehts los: Nach Hyprland-Wiki
 
-hyprland
-kitty
+yay und multilib
 
 dunst
 pipewire
@@ -28,12 +27,12 @@ ttf-jetbrain-mono-nerd
 
 noto-fonts-emoji
 ufw
+fwupd
 uwsm
 power-profiles-daemon
 bluez
 bluez-utils
-
-## Eigenständig gewählt
+nano
 
 ### Treiber
 
@@ -44,11 +43,9 @@ lib32-vulkan-radeon
 
 ### System
 
-fwupd
+brightnessctl
 udisks2
 udiskie
-ntfs-3g
-brightnessctl
 
 ### Oberfläche
 
