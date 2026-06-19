@@ -21,19 +21,17 @@ network configuration: network manager
 timezone: Europe/Berlin
 install: yes
 
-automatisch-installiert:
+automatisch-installiert -Qe:
 amd-ucode
 base
-base-devel
 bluez
 bluez-utils
 efibootmgr
-git
 gst-plugin-pipewire
 libpulse
 linux
 linux-firmware
-lvm2
+networkmanager
 pipewire
 pipewire-alsa
 pipewire-jack
@@ -43,6 +41,7 @@ sof-firmware
 sudo
 ufw
 wireplumber
+wpa_supplicant
 zram-generator
 ```
 
