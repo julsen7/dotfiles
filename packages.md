@@ -53,7 +53,7 @@ hyprlauncher
 hyprpaper
 hyprpicker
 hyprshot
-waybar
+waybar pipewire-jack auswählen
 kitty
 
 ### TUI
