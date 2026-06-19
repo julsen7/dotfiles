@@ -11,12 +11,12 @@ Boot from your Arch Linux live media and complete these initial configuration st
 ```bash
 keyboard layout de-latin1
 locale language de_DE.UTF-8
-disk configuration use best afford, ext4 home-no
+disk configuration use best afford, ext4, home-no
 authentication rootpw
 user julsen <pw> sudo-yes
 profile minimal
-timezone: Europe/Berlin
-install: yes
+Network configuration: Networkmanager
+Timezone: Europe/Berlin
 
 automatisch-installiert -Qe:
 amd-ucode
@@ -24,7 +24,9 @@ base
 efibootmgr
 linux
 linux-firmware
+networkmanager
 sudo
+wpa_supplicant
 zram-generator
 ```
 
