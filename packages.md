@@ -1,21 +1,18 @@
 # Packages
 
-## Archinstall nicht im minimalistischen
+## Archinstall FEHLEND!!!
 
 bluez
 bluez-utils
 gst-plugin-pipewire
 libpulse
-pipewire
 pipewire-alsa
 pipewire-jack
 pipewire-pulse
-power-profiles-daemon
 sof-firmware
-ufw
-wireplumber
 
-von Hyprland als essentiel genannt:
+## Nach Hyprland-Wiki
+
 dunst
 pipewire
 wireplumber
@@ -27,24 +24,13 @@ noto-fonts
 ttf-jetbrain-mono-nerd
 ---
 
-von mir:
+## Von mir
+
 noto-fonts-emoji
-
-## Nach Hyprland-Wiki
-
-dunst
-pipewire
-wireplumber
-xdg-desktop-portal-hyprland
+ufw
 uwsm
-libnewt
-hyprpolkitagent
-qt5-wayland
-qt6-wayland
-noto-fonts
-noto-fonts-emoji
-ttf-jetbrains-mono-nerd
-nwg-look
+power-profiles-daemon
+---
 
 ## Eigenständig gewählt
 
