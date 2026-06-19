@@ -2,14 +2,13 @@
 
 ## Archinstall FEHLEND!!!
 
-bluez
-bluez-utils
 gst-plugin-pipewire
 libpulse
 pipewire-alsa
 pipewire-jack
 pipewire-pulse
 sof-firmware
+---
 
 ## Nach Hyprland-Wiki
 
@@ -30,6 +29,8 @@ noto-fonts-emoji
 ufw
 uwsm
 power-profiles-daemon
+bluez
+bluez-utils
 ---
 
 ## Eigenständig gewählt
