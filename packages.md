@@ -6,7 +6,6 @@ bluez
 bluez-utils
 gst-plugin-pipewire
 libpulse
-networkmanager
 pipewire
 pipewire-alsa
 pipewire-jack
@@ -15,7 +14,6 @@ power-profiles-daemon
 sof-firmware
 ufw
 wireplumber
-wpa_supplicant
 
 ## Nach Hyprland-Wiki
 
