@@ -15,12 +15,10 @@ hl.monitor({
 hl.exec_cmd("gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Modern-Ice'")
 hl.exec_cmd("hyprctl setcursor Bibata-Modern-Ice 24")
 
--- systemctl --user enable --now hyprpolkitagent.service
-
 hl.on("hyprland.start", function()
-    hl.exec_cmd("uwsm app -- discord --start-minimized")
     hl.exec_cmd("uwsm app -- udiskie")
-
+    
+    hl.exec_cmd("uwsm app -- discord --start-minimized")
     hl.exec_cmd("uwsm app -- spotify-launcher", { workspace = "5 silent" })
 end)
 
@@ -66,14 +64,14 @@ hl.config({
 
 hl.gesture({ fingers = 3, direction = "horizontal", action = "workspace" })
 
-local terminal    = "kitty"
-local filemanager = "yazi"
-local browser     = "chromium"
-local music       = "spotify-launcher"
-local code        = "code"
-local menu        = "hyprlauncher"
-local colorpicker = "hyprpicker -a"
-local screenshot  = "hyprshot -m region --clipboard-only"
+local terminal    = "uwsm app -- kitty"
+local filemanager = "uwsm app -- yazi"
+local browser     = "uwsm app -- chromium"
+local music       = "uwsm app -- spotify-launcher"
+local code        = "uwsm app -- code"
+local menu        = "uwsm app -- hyprlauncher"
+local colorpicker = "uwsm app -- hyprpicker -a"
+local screenshot  = "uwsm app -- hyprshot -m region --clipboard-only"
 
 hl.bind("SUPER + Q", hl.dsp.exec_cmd(terminal))
 hl.bind("SUPER + E", hl.dsp.exec_cmd(terminal .. " -e " .. filemanager))
