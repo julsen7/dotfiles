@@ -105,3 +105,4 @@ visual-studio-code-bin
 # paint.net alternative
 # filezilla
 # gnome-keyring
+# maria-db
