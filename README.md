@@ -21,7 +21,7 @@ network configuration: network manager
 timezone: Europe/Berlin
 install: yes
 
-installiert automatisch dann:
+automatisch-installiert:
 amd-ucode
 base
 base-devel
