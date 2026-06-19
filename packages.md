@@ -1,5 +1,7 @@
 # Packages
 
+## Nach Hyprland-Wiki
+
 dunst
 pipewire
 wireplumber
@@ -13,6 +15,8 @@ noto-fonts
 noto-fonts-emoji
 ttf-jetbrains-mono-nerd
 nwg-look
+
+## Eigenständig gewählt
 
 mesa
 lib32-mesa
@@ -72,7 +76,7 @@ github-cli
 # easyeffects
 # davinci-resolve (git clone https://aur.archlinux.org/davinci-resolve.git, linux-zip von blackmagic herunterladen und in geklonten ordner kopieren, makepkg -i, fehlendes über yay installieren ! https://mirror.cachyos.org/repo/x86_64/cachyos/ für qt5-webengine und dann "sudo pacman -U qt5-webengine-5.15.19-5.1-x86_64.pkg.tar.zst" im Downloadsordner, makepkg -i wiederholen)
 
-
+# cliphist
 # paint.net alternative
 # filezilla
 # gnome-keyring

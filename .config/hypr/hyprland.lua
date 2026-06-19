@@ -12,6 +12,14 @@ hl.monitor({
     scale    = "1",
 })
 
+hl.exec_cmd("systemctl --user start hyprpolkitagent") -- ? user
+hl.exec_cmd("systemctl --user start graphical-session.target")
+
+hl.exec_cmd("gsettings set org.gnome.desktop.interface cursor-theme 'THEME_NAME'")
+hl.exec_cmd("hyprctl setcursor Bibata-Modern-Ice 24")
+
+-- systemctl --user enable --now hyprpolkitagent.service
+
 hl.on("hyprland.start", function()
     hl.exec_cmd("waybar & hyprpaper")
     hl.exec_cmd("udiskie")
@@ -23,11 +31,11 @@ hl.on("hyprland.start", function()
 end)
 
 for i = 1, 3 do
-    hl.workspace_rule({ workspace = i, monitor = "HDMI-A-1", default = true, persistent = true })
+    hl.workspace_rule({ workspace = tostring(i), monitor = "HDMI-A-1", default = true, persistent = true })
 end
 
 for i = 4, 6 do
-    hl.workspace_rule({ workspace = i, monitor = "eDP-1", default = true, persistent = true })
+    hl.workspace_rule({ workspace = tostring(i), monitor = "eDP-1", default = true, persistent = true })
 end
 
 hl.config({
@@ -62,11 +70,7 @@ hl.config({
     },
 })
 
-hl.gesture({
-    fingers = 3,
-    direction = "horizontal",
-    action = "workspace"
-})
+hl.gesture({ fingers = 3, direction = "horizontal", action = "workspace" })
 
 local terminal    = "kitty"
 local filemanager = "yazi"
