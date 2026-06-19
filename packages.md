@@ -19,6 +19,11 @@ mesa
 lib32-mesa
 vulkan-radeon
 lib32-vulkan-radeon
+# nvidia-open
+# lib32-nvidia-utils
+# opencl-nvidia
+# lib32-opencl-nvidia
+# nvidia-prime
 
 ### System
 
@@ -93,11 +98,6 @@ visual-studio-code-bin
 
 ### Nur auf hauptrechner
 
-# nvidia-open
-# nvidia-prime
-# lib32-nvidia-utils
-# opencl-nvidia
-# lib32-opencl-nvidia
 # steam
 # obs-studio
 # modrinth-app
