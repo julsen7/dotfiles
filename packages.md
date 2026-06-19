@@ -8,9 +8,11 @@ pipewire-alsa
 pipewire-jack
 pipewire-pulse
 sof-firmware
----
 
 ## Nach Hyprland-Wiki
+
+hyprland
+kitty
 
 dunst
 pipewire
@@ -21,7 +23,6 @@ qt5-wayland
 qt6-wayland
 noto-fonts
 ttf-jetbrain-mono-nerd
----
 
 ## Von mir
 
@@ -31,7 +32,6 @@ uwsm
 power-profiles-daemon
 bluez
 bluez-utils
----
 
 ## Eigenständig gewählt
 
