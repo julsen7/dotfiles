@@ -13,27 +13,6 @@ sof-firmware
 
 yay und multilib
 
-dunst
-pipewire
-wireplumber
-xdg-desktop-portal-hyprland
-hyprpolkitagent
-qt5-wayland
-qt6-wayland
-noto-fonts
-ttf-jetbrain-mono-nerd
-
-## Von mir
-
-noto-fonts-emoji
-ufw
-fwupd
-uwsm
-power-profiles-daemon
-bluez
-bluez-utils
-nano
-
 ### Treiber
 
 mesa
@@ -43,9 +22,23 @@ lib32-vulkan-radeon
 
 ### System
 
+dunst
+pipewire
+wireplumber
+xdg-desktop-portal-hyprland
+hyprpolkitagent
+qt5-wayland
+qt6-wayland
 brightnessctl
 udisks2
 udiskie
+ufw
+fwupd
+uwsm
+power-profiles-daemon
+bluez
+bluez-utils
+nano
 
 ### Oberfläche
 
@@ -68,6 +61,9 @@ nmtui-go
 
 ### Design
 
+noto-fonts
+noto-fonts-emoji
+ttf-jetbrain-mono-nerd
 fastfetch
 starship
 zsh
@@ -75,9 +71,6 @@ zsh-autosuggestions
 zsh-syntax-highlighting
 python-pywal
 yazi
-
-### Design 2
-
 bibata-cursor-git
 eza
 zoxide
