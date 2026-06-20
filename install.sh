@@ -85,10 +85,11 @@ fi
 cd "$DOTFILES_DIR"
 
 echo "==> Generating Wallpaper-Theme ..."
-if [ -f "wallpapers/wallpaper.webp" ]; then
-    wal -i "wallpapers/wallpaper.webp"
+WALLPAPER_PATH="$DOTFILES_DIR/wallpapers/wallpaper.webp"
+if [ -f "$WALLPAPER_PATH" ]; then
+    wal -i "$WALLPAPER_PATH"
 else
-    echo "Warning: wallpapers/wallpaper.webp not found!"
+    echo "Warning: $WALLPAPER_PATH not found!"
 fi
 
 echo "===================================== "
