@@ -1,16 +1,8 @@
 # Packages
 
-## Archinstall FEHLEN ignorieren hier!!!
-
-gst-plugin-pipewire
-pipewire-alsa
-sof-firmware
-
-## !!! Hier gehts los: Nach Hyprland-Wiki
-
 yay und multilib
 
-### Treiber
+## Treiber
 
 mesa
 lib32-mesa
@@ -22,10 +14,13 @@ lib32-vulkan-radeon
 # lib32-opencl-nvidia
 # nvidia-prime
 
-### System
+## System
 
 dunst
 pipewire
+gst-plugin-pipewire
+pipewire-alsa
+sof-firmware
 wireplumber
 xdg-desktop-portal-hyprland
 hyprpolkitagent
@@ -43,7 +38,7 @@ bluez
 bluez-utils
 nano
 
-### Oberfläche
+## Oberfläche
 
 ly
 hyprland
@@ -54,7 +49,7 @@ hyprshot
 waybar pipewire-jack auswählen
 kitty
 
-### TUI
+## TUI
 
 btop
 bluetui
@@ -62,7 +57,7 @@ wiremix
 radeontop
 nmtui-go
 
-### Design
+## Design
 
 noto-fonts
 noto-fonts-emoji
@@ -79,23 +74,20 @@ eza
 zoxide
 fzf
 
-### Andere
+## Andere
 
 openssh
 7zip
 jdk-openjdk
 github-cli
 
-### Apps
+## Apps
 
 chromium
 discord
 spotify-launcher
 texlive
 visual-studio-code-bin
-
-### Nur auf hauptrechner
-
 # steam
 # obs-studio
 # open-studio-plugin-browser (--asdeps)
@@ -107,6 +99,7 @@ visual-studio-code-bin
 
 ### To Try
 
+# openrgb (tastatur)
 # cliphist
 # paint.net alternative
 # filezilla
