@@ -48,11 +48,11 @@ mesa
 lib32-mesa
 vulkan-radeon
 lib32-vulkan-radeon
-# nvidia-open
-# lib32-nvidia-utils
-# opencl-nvidia
-# lib32-opencl-nvidia
-# nvidia-prime
+#nvidia-open
+#lib32-nvidia-utils
+#opencl-nvidia
+#lib32-opencl-nvidia
+#nvidia-prime
 
 ## Oberfläche
 
@@ -75,9 +75,9 @@ stow
 btop
 bluetui
 wiremix
-radeontop
-nvtop
 nmtui-go
+radeontop
+#nvtop
 
 ## Design
 
@@ -109,17 +109,17 @@ discord
 spotify-launcher
 texlive-basic
 visual-studio-code-bin
-steam
-obs-studio
-open-studio-plugin-browser (--asdeps)
-luajit
-obs-vkcapture
-lib32-obs-vkcapture
-modrinth-app
-heroic-games-launcher-bin
-piper
-easyeffects qt6-multimedia-ffmpeg wählen
-# davinci-resolve (git clone <https://aur.archlinux.org/davinci-resolve.git>, linux-zip von blackmagic herunterladen und in geklonten ordner kopieren, makepkg -i, fehlendes über yay installieren ! <https://mirror.cachyos.org/repo/x86_64/cachyos/> für qt5-webengine und dann "sudo pacman -U qt5-webengine-5.15.19-5.1-x86_64.pkg.tar.zst" im Downloadsordner, makepkg -i wiederholen)
+#modrinth-app
+#steam
+#heroic-games-launcher-bin
+#piper
+#easyeffects qt6-multimedia-ffmpeg wählen
+#obs-studio
+#open-studio-plugin-browser (--asdeps)
+#luajit
+#obs-vkcapture
+#lib32-obs-vkcapture
+#davinci-resolve (git clone <https://aur.archlinux.org/davinci-resolve.git>, linux-zip von blackmagic herunterladen und in geklonten ordner kopieren, makepkg -i, fehlendes über yay installieren ! <https://mirror.cachyos.org/repo/x86_64/cachyos/> für qt5-webengine und dann "sudo pacman -U qt5-webengine-5.15.19-5.1-x86_64.pkg.tar.zst" im Downloadsordner, makepkg -i wiederholen)
 
 ## To Try
 
