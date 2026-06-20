@@ -128,3 +128,5 @@ visual-studio-code-bin
 # pinta/gimp
 # filezilla
 # maria-db
+# helvum
+# pulsemixer
