@@ -14,10 +14,17 @@ lib32-vulkan-radeon
 # lib32-opencl-nvidia
 # nvidia-prime
 
+## Basis
+
+
+base-devel
+stow
+
 ## System
 
 dunst
 pipewire
+pipewire-audio
 pipewire-alsa
 pipewire-jack
 pipewire-pulse
@@ -27,6 +34,7 @@ wireplumber
 xdg-desktop-portal
 xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
+polkit
 hyprpolkitagent
 gnome-keyring
 qt5-wayland
@@ -49,6 +57,7 @@ hyprland
 hyprlauncher
 hyprpaper
 hyprpicker
+wl-clipboard
 hyprshot
 waybar pipewire-jack auswählen
 kitty
@@ -65,7 +74,7 @@ nmtui-go
 
 noto-fonts
 noto-fonts-emoji
-ttf-jetbrain-mono-nerd
+ttf-jetbrains-mono-nerd
 fastfetch
 starship
 zsh
@@ -80,6 +89,7 @@ fzf
 
 ## Andere
 
+git
 openssh
 7zip
 jdk-openjdk
@@ -90,7 +100,7 @@ github-cli
 chromium
 discord
 spotify-launcher
-texlive
+texlive-basic
 visual-studio-code-bin
 # steam
 # obs-studio
@@ -103,8 +113,8 @@ visual-studio-code-bin
 
 ### To Try
 
-# openrgb (tastatur)
+# openrgb
 # cliphist
-# paint.net alternative
+# pinta/gimp
 # filezilla
 # maria-db
