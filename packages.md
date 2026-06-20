@@ -69,6 +69,7 @@ waybar
 kitty
 yazi
 stow
+man-db
 
 ## TUI
 
