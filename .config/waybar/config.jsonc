@@ -12,7 +12,7 @@
     // "custom/timer"
   ],
   "modules-right": [
-    // "custom/updates",
+    "custom/updates",
     "group/audio",
     "group/connections",
     "group/charger"
@@ -21,7 +21,7 @@
   // CUSTOM-ARCH-ICON
   "custom/arch-icon": {
     "format": "󰣇",
-    "on-click": "kitty",
+    "on-click": "uwsm app -- kitty",
     "tooltip": false
   },
   // SYSTEM-GROUP
@@ -38,7 +38,7 @@
   "custom/cpu": {
     "exec": "echo \"{\\\"text\\\":\\\" $((100 - $(vmstat | tail -1 | awk '{print $15}')))%\\\",\\\"tooltip\\\":\\\"CPU Temp: $(sensors | grep -E '(Core 0|Tctl|Tdie)' | head -n 1 | awk '{print $2}' | tr -d '+')\\\"}\"",
     "format": "{}",
-    "on-click": "kitty --title=btop -e btop",
+    "on-click": "uwsm app -- kitty --title=btop -e btop",
     "return-type": "json",
     "interval": 10
   },
@@ -46,14 +46,14 @@
   "custom/gpu": {
     "exec": "echo \"{\\\"text\\\":\\\"|  $(cat /sys/class/hwmon/hwmon4/device/gpu_busy_percent 2>/dev/null || echo 0)%\\\",\\\"tooltip\\\":\\\"GPU Temp: $(( $(cat /sys/class/hwmon/hwmon4/temp1_input 2>/dev/null || echo 0) / 1000 ))°C\\\"}\"",
     "format": "{}",
-    "on-click": "kitty --title=radeontop -e radeontop",
+    "on-click": "uwsm app -- kitty --title=nvtop -e nvtop",
     "return-type": "json",
     "interval": 10
   },
   // MEMORY
   "memory": {
     "format": "|  {percentage}%",
-    "on-click": "kitty --title=btop -e btop",
+    "on-click": "uwsm app -- kitty --title=btop -e btop",
     "interval": 10
   },
   // DISK
@@ -116,13 +116,13 @@
   "group/audio": {
     "orientation": "horizontal",
     "modules": [
-      "wireplumber",
+      "pulseaudio",
       "pulseaudio/slider",
-      "wireplumber#source"
+      "pulseaudio#source"
     ]
   },
-  // WIREPLUMBER
-  "wireplumber": {
+  // PULSEAUDIO
+  "pulseaudio": {
     "format": "{icon}",
     "format-muted": "",
     "format-icons": [
@@ -131,22 +131,23 @@
       ""
     ],
     "on-click": "wpctl set-mute @DEFAULT_SINK@ toggle",
-    "on-click-right": "exec kitty --title=wiremix -e wiremix"
+    "on-click-right": "uwsm app -- kitty --title=wiremix -e wiremix"
   },
   // PULSEAUDIO-SLIDER
   "pulseaudio/slider": {
     "min": 0,
-    "max": 100,
+    "max": 150,
     "orientation": "horizontal"
   },
-  // WIREPLUMBER-SOURCE
-  "wireplumber#source": {
-    "node-type": "Audio/Source",
-    "format": "",
-    "format-muted": "",
+  // PULSEAUDIO-SOURCE
+  "pulseaudio#source": {
+    "format": "{format_source}",
+    "format-source": "",
+    "format-source-muted": "",
     "on-click": "wpctl set-mute @DEFAULT_SOURCE@ toggle",
-    "on-click-right": "exec kitty --title=wiremix -e wiremix",
-    "scroll-step": 0
+    "on-click-right": "uwsm app -- kitty --title=wiremix -e wiremix",
+    "on-scroll-up": "none",
+    "on-scroll-down": "none"
   },
   // CONNECTIONS-GROUP
   "group/connections": {
@@ -159,7 +160,7 @@
   // BLUETOOTH
   "bluetooth": {
     "format": "󰂯 {num_connections}",
-    "on-click": "exec kitty --title=bluetui -e bluetui",
+    "on-click": "uwsm app -- exec kitty --title=bluetui -e bluetui",
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}"
   },
@@ -170,7 +171,7 @@
     "format-wifi": "",
     "tooltip-format": "{essid} {signalStrength}%\n {bandwidthDownBytes}  {bandwidthUpBytes}",
     "tooltip-format-disconnected": "",
-    "on-click": "exec kitty --title=nmtui-go -e nmtui-go",
+    "on-click": "uwsm app -- kitty --title=nmtui-go -e nmtui-go",
     "interval": 30
   },
   // GROUP-CHARGER

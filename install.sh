@@ -51,12 +51,12 @@ echo "==> Linking Dotfiles with GNU Stow..."
 cd "$DOTFILES_DIR"
 stow -R .
 
-echo "==> Copy ly Configuration..."
-sudo mkdir -p /etc/ly/
-if [ -f "$DOTFILES_DIR/config.ini" ]; then
-    sudo cp "$DOTFILES_DIR/config.ini" /etc/ly/
+echo "==> Configure ly ..."
+if [ -f /etc/ly/config.ini ]; then
+    sudo mkdir -p /etc/ly/
+    sudo sed -i 's/^#\?\s*animation\s*=.*/animation = matrix/' /etc/ly/config.ini
 else
-    echo "Warning: config.ini not found in $DOTFILES_DIR!"
+    echo "Warning: /etc/ly/config.ini not found."
 fi
 
 echo "==> Activating Services..."
