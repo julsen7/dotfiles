@@ -32,6 +32,7 @@ pipewire
 wireplumber
 xdg-desktop-portal-hyprland
 hyprpolkitagent
+gnome-keyring
 qt5-wayland
 qt6-wayland
 brightnessctl
@@ -112,5 +113,4 @@ visual-studio-code-bin
 # cliphist
 # paint.net alternative
 # filezilla
-# gnome-keyring
 # maria-db
