@@ -13,3 +13,5 @@
 - nvidia analog zu radeontop tui
 - fix install.sh pywal not generating waybar-colors.css
 - vscode settings & extensions inside .config
+- "sudo sed -i" bei ly config datei ähn lich zu multilib
+- waybar und konflikt lösen (packages.md)

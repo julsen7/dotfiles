@@ -113,6 +113,9 @@ visual-studio-code-bin
 # steam
 # obs-studio
 # open-studio-plugin-browser (--asdeps)
+# luajit
+# obs-vkcapture
+# lib32-obs-vkcapture
 # modrinth-app
 # heroic-games-launcher-bin
 # piper
