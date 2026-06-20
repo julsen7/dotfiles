@@ -3,10 +3,7 @@
 ## Archinstall FEHLEN ignorieren hier!!!
 
 gst-plugin-pipewire
-libpulse
 pipewire-alsa
-pipewire-jack
-pipewire-pulse
 sof-firmware
 
 ## !!! Hier gehts los: Nach Hyprland-Wiki
