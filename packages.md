@@ -2,17 +2,6 @@
 
 yay und multilib
 
-## Treiber
-
-mesa
-lib32-mesa
-vulkan-radeon
-lib32-vulkan-radeon
-# nvidia-open
-# lib32-nvidia-utils
-# opencl-nvidia
-# lib32-opencl-nvidia
-# nvidia-prime
 
 ## Basis (von Archinstall)
 
@@ -28,7 +17,8 @@ zram-generator
 
 ## System
 
-dunst
+fwupd
+ufw
 pipewire
 pipewire-audio
 pipewire-alsa
@@ -37,38 +27,51 @@ pipewire-pulse
 gst-plugin-pipewire
 sof-firmware
 wireplumber
+base-devel
+bluez
+bluez-utils
+power-profiles-daemon
+nano
 xdg-desktop-portal
 xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
 polkit
 hyprpolkitagent
 gnome-keyring
-qt5-wayland
-qt6-wayland
+dunst
 brightnessctl
 udisks2
 udiskie
-ufw
-fwupd
-uwsm
-power-profiles-daemon
-bluez
-bluez-utils
-nano
-base-devel
-stow
+qt5-wayland
+qt6-wayland
+
+## Treiber
+
+mesa
+lib32-mesa
+vulkan-radeon
+lib32-vulkan-radeon
+# nvidia-open
+# lib32-nvidia-utils
+# opencl-nvidia
+# lib32-opencl-nvidia
+# nvidia-prime
 
 ## Oberfläche
 
+uwsm
 ly
 hyprland
 hyprlauncher
 hyprpaper
 hyprpicker
+python-pywal
 wl-clipboard
 hyprshot
 waybar pipewire-jack auswählen
 kitty
+yazi
+stow
 
 ## TUI
 
@@ -88,8 +91,6 @@ starship
 zsh
 zsh-autosuggestions
 zsh-syntax-highlighting
-python-pywal
-yazi
 bibata-cursor-git
 eza
 zoxide
