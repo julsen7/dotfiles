@@ -2,7 +2,6 @@
 
 - waybar: updates, timer colors, disk größe
 - bluetooth-tethering https://wiki.hypr.land/Useful-Utilities/Phone-connect/
-- install-skript: waybar install-auswahl (2 wählen pipewire-jack statt jack2)
 - vscode settings & extensions inside .config
 - "didum"-headset-sound alle paar minuten fixen
 - obs: game capture, autostart von screen picker
