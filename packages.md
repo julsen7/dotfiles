@@ -59,7 +59,7 @@ nvidia-prime
 uwsm
 ly
 hyprland
-hyprlauncher
+rofi
 hyprpaper
 hyprpicker
 python-pywal
@@ -115,7 +115,12 @@ steam
 heroic-games-launcher-bin
 piper
 # easyeffects qt6-multimedia-ffmpeg wählen
-# obs-studio-browser (mit xwayland-flag starten)
+# obs-studio
+# --asdeps obs-studio-plugin-browser
+# obs-vkcapture
+# lib32-obs-vkcapture
+# obs-pipewire-audio-capture
+# chatterino2
 
 # davinci-resolve
 # git clone https://aur.archlinux.org/davinci-resolve.git

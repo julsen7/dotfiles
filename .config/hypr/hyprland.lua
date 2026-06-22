@@ -22,10 +22,7 @@ hl.monitor({
 
 
 hl.on("hyprland.start", function()
-    -- GTK 4
     hl.exec_cmd("gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'")
-    
-    -- Cursor
     hl.exec_cmd("gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Modern-Ice'")
     
     hl.exec_cmd("uwsm app -- udiskie")
@@ -81,7 +78,7 @@ local filemanager = "uwsm app -- yazi"
 local browser     = "uwsm app -- chromium"
 local music       = "uwsm app -- spotify-launcher"
 local code        = "uwsm app -- code"
-local menu        = "uwsm app -- hyprlauncher"
+local menu        = "uwsm app -- rofi -show drun -show-icons"
 local colorpicker = "uwsm app -- hyprpicker -a"
 local screenshot  = "uwsm app -- hyprshot -m region --clipboard-only"
 
