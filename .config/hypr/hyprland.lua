@@ -78,7 +78,7 @@ local filemanager = "uwsm app -- yazi"
 local browser     = "uwsm app -- chromium"
 local music       = "uwsm app -- spotify-launcher"
 local code        = "uwsm app -- code"
-local menu        = "uwsm app -- rofi -show drun -show-icons"
+local menu        = "uwsm app -- rofi -show drun -show-icons -theme theme"
 local colorpicker = "uwsm app -- hyprpicker -a"
 local screenshot  = "uwsm app -- hyprshot -m region --clipboard-only"
 
