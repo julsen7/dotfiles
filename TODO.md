@@ -8,7 +8,6 @@
 # Bugs
 
 - obs: autostart von screen picker
-- pywal install-script not working
 
 # Other
 
