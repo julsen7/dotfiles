@@ -3,6 +3,7 @@
 set -euo pipefail
 
 DOTFILES_DIR="$(dirname "$(readlink -f "$0")")"
+TARGET_WALLPAPER_DIR="/home/julsen/wallpaper"
 
 echo "==> Starting Installation..."
 
@@ -35,23 +36,27 @@ fi
 
 echo "==> Installing packages from $PACKAGE_FILE..."
 while IFS= read -r line || [ -n "$line" ]; do
-    trimmed=$(echo "$line" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')
+    trimmed="${line#"${line%%[![:space:]]*}"}"
+    trimmed="${trimmed%"${trimmed##*[![:space:]]}"}"
 
     [[ -z "$trimmed" ]] && continue
     [[ "$trimmed" =~ ^# ]] && continue
 
     package=$(echo "$trimmed" | sed -E 's/^([-*]|([0-9]+\.))\s+//; s/`//g')
 
+    [[ -z "$package" ]] && continue
+
     echo "Installing: $package"
-    yay -S --noconfirm "$package"
+    yay -S --noconfirm "$package" || echo "Warning: Failed to install $package"
 done < "$PACKAGE_FILE"
 echo "All packages processed!"
 
 echo "==> Linking Dotfiles with GNU Stow..."
 cd "$DOTFILES_DIR"
-stow -R .
+stow --adopt -R .
+git reset --hard HEAD 2>/dev/null || true
 
-echo "==> Configure ly ..."
+echo "==> Configuring ly ..."
 if [ -f /etc/ly/config.ini ]; then
     sudo mkdir -p /etc/ly/
     sudo sed -i 's/^#\?\s*animation\s*=.*/animation = matrix/' /etc/ly/config.ini
@@ -59,15 +64,15 @@ else
     echo "Warning: /etc/ly/config.ini not found."
 fi
 
+# Commands to check status
+# systemctl [--user] list-unit-files --state=enabled
+# systemctl [--user] status XXX
+
 echo "==> Activating Services..."
 sudo systemctl enable NetworkManager.service
 sudo systemctl enable ly@tty1.service
 sudo systemctl enable bluetooth.service
 sudo systemctl enable ufw.service
-
-# Commands to check status
-# systemctl [--user] list-unit-files --state=enabled
-# systemctl [--user] status XXX
 
 systemctl --user enable pipewire.service
 systemctl --user enable pipewire-pulse.service
@@ -85,11 +90,18 @@ fi
 cd "$DOTFILES_DIR"
 
 echo "==> Generating Wallpaper-Theme ..."
-WALLPAPER_PATH="$DOTFILES_DIR/wallpapers/wallpaper.webp"
-if [ -f "$WALLPAPER_PATH" ]; then
+
+WALLPAPER_PATH=$(find "$DOTFILES_DIR/wallpapers" -type f \( -name "*.webp" -o -name "*.jpg" -o -name "*.png" \) -print -quit 2>/dev/null)
+
+if [ -n "$WALLPAPER_SRC" ] && [ -f "$WALLPAPER_SRC" ]; then
+    mkdir -p "$TARGET_WALLPAPER_DIR"
+
+    cp "$WALLPAPER_SRC" "$TARGET_WALLPAPER_DIR/Mountain.webp"
+    cp "$DOTFILES_DIR"/wallpapers/* "$TARGET_WALLPAPER_DIR/" 2>/dev/null || true
+
     wal -i "$WALLPAPER_PATH"
 else
-    echo "Warning: $WALLPAPER_PATH not found!"
+    echo "Warning: No wallpaper found in $DOTFILES_DIR/wallpapers/"
 fi
 
 echo "===================================== "
