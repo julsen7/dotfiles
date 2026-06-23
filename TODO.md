@@ -3,6 +3,7 @@
 - Dotfiles: dunst, wiremix/pipewire/wireplumber, rofi, spotify, discord
 - waybar: updates, timer colors, disk größe
 - bluetooth-tethering https://wiki.hypr.land/Useful-Utilities/Phone-connect/
+- cliphist https://wiki.archlinux.org/title/Clipboard
 
 # Bugs
 
