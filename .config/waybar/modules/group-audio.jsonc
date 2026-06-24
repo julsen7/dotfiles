@@ -1,0 +1,15 @@
+{
+    "include": [
+        "~/.config/waybar/modules/pulseaudio-slider.jsonc",
+        "~/.config/waybar/modules/pulseaudio.jsonc",
+        "~/.config/waybar/modules/pulseaudio-source.jsonc"
+    ],
+    "group/audio": {
+        "orientation": "horizontal",
+        "modules": [
+            "pulseaudio",
+            "pulseaudio/slider",
+            "pulseaudio#source"
+        ]
+    }
+}

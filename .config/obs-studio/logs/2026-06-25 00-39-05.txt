@@ -1,0 +1,166 @@
+00:39:05.143: Platform: Wayland
+00:39:05.143: CPU Name: AMD Ryzen 7 5800H with Radeon Graphics
+00:39:05.143: CPU Speed: 3194.313MHz
+00:39:05.143: Physical Cores: 8, Logical Cores: 16
+00:39:05.143: Physical Memory: 15329MB Total, 9903MB Free
+00:39:05.143: Kernel Version: Linux 7.0.13-arch1-1
+00:39:05.143: Distribution: "Arch Linux" Unknown
+00:39:05.143: Desktop Environment: Hyprland (Hyprland)
+00:39:05.143: Session Type: wayland
+00:39:05.144: Current Date/Time: 2026-06-25, 00:39:05
+00:39:05.144: Browser Hardware Acceleration: true
+00:39:05.144: Qt Version: 6.11.1 (runtime), 6.11.1 (compiled)
+00:39:05.144: Portable mode: false
+00:39:05.186: OBS 32.1.2 (linux)
+00:39:05.186: ---------------------------------
+00:39:05.187: ---------------------------------
+00:39:05.187: audio settings reset:
+00:39:05.187: 	samples per sec: 48000
+00:39:05.187: 	speakers:        2
+00:39:05.187: 	max buffering:   960 milliseconds
+00:39:05.187: 	buffering type:  dynamically increasing
+00:39:05.188: ---------------------------------
+00:39:05.188: Initializing OpenGL...
+00:39:05.188: Using EGL/Wayland
+00:39:05.241: Initialized EGL 1.5
+00:39:05.254: Loading up OpenGL on adapter AMD AMD Radeon Graphics (radeonsi, renoir, ACO, DRM 3.64, 7.0.13-arch1-1)
+00:39:05.254: OpenGL loaded successfully, version 4.6 (Core Profile) Mesa 26.1.3-arch1.2, shading language 4.60
+00:39:05.281: ---------------------------------
+00:39:05.281: video settings reset:
+00:39:05.281: 	base resolution:   2560x1440
+00:39:05.281: 	output resolution: 1920x1080
+00:39:05.281: 	downscale filter:  Bicubic
+00:39:05.281: 	fps:               60/1
+00:39:05.281: 	format:            NV12
+00:39:05.281: 	YUV mode:          Rec. 709/Partial
+00:39:05.281: NV12 texture support enabled
+00:39:05.281: P010 texture support not available
+00:39:05.286: Audio monitoring device:
+00:39:05.286: 	name: Standard
+00:39:05.286: 	id: default
+00:39:05.288: ---------------------------------
+00:39:05.289: Failed to load 'en-US' text for module: 'decklink-captions.so'
+00:39:05.291: Failed to load 'en-US' text for module: 'decklink-output-ui.so'
+00:39:05.292: A DeckLink iterator could not be created.  The DeckLink drivers may not be installed
+00:39:05.292: Failed to initialize module 'decklink.so'
+00:39:05.404: [pipewire] Available capture sources:
+00:39:05.404: [pipewire]     - Monitor source
+00:39:05.404: [pipewire]     - Window source
+00:39:05.412: v4l2loopback not installed, virtual camera not registered
+00:39:05.414: [linux-vkcapture] plugin loaded successfully (version 1.5.6)
+00:39:05.458: [obs-browser]: Version 2.26.8
+00:39:05.458: [obs-browser]: CEF Version 149.0.7827.156 (runtime), 148.0.8+g18e00ea+chromium-148.0.7778.96 (compiled)
+00:39:05.480: VAAPI: API version 1.23
+00:39:05.481: FFmpeg VAAPI H264 encoding supported
+00:39:05.485: VAAPI: Failed to initialize display in vaapi_device_av1_supported
+00:39:05.485: FFmpeg VAAPI AV1 encoding not supported
+00:39:05.488: FFmpeg VAAPI HEVC encoding supported
+00:39:05.842: [obs-nvenc] NVENC version: 13.0 (compiled) / 13.1 (driver), CUDA driver version: 13.30, AV1 supported: false
+00:39:05.878: [obs-websocket] [obs_module_load] you can haz websockets (Version: 5.7.3 | RPC Version: 1)
+00:39:05.878: [obs-websocket] [obs_module_load] Qt version (compile-time): 6.11.1 | Qt version (run-time): 6.11.1
+00:39:05.878: [obs-websocket] [obs_module_load] Linked ASIO Version: 103800
+00:39:05.878: [obs-websocket] [Config::Load] Existing configuration not found, using defaults.
+00:39:05.878: [obs-websocket] [Config::Load] (FirstLoad) Generating new server password.
+00:39:05.885: [obs-websocket] [obs_module_load] Module loaded.
+00:39:05.890: ---------------------------------
+00:39:05.890:   Loaded Modules:
+00:39:05.890:     text-freetype2.so
+00:39:05.890:     rtmp-services.so
+00:39:05.890:     obs-x264.so
+00:39:05.890:     obs-websocket.so
+00:39:05.890:     obs-webrtc.so
+00:39:05.890:     obs-vst.so
+00:39:05.890:     obs-transitions.so
+00:39:05.890:     obs-qsv11.so
+00:39:05.890:     obs-outputs.so
+00:39:05.890:     obs-nvenc.so
+00:39:05.890:     obs-libfdk.so
+00:39:05.890:     obs-filters.so
+00:39:05.890:     obs-ffmpeg.so
+00:39:05.890:     obs-browser.so
+00:39:05.890:     linux-vkcapture.so
+00:39:05.890:     linux-v4l2.so
+00:39:05.890:     linux-pulseaudio.so
+00:39:05.890:     linux-pipewire.so
+00:39:05.890:     linux-pipewire-audio.so
+00:39:05.890:     linux-jack.so
+00:39:05.890:     linux-capture.so
+00:39:05.890:     linux-alsa.so
+00:39:05.890:     image-source.so
+00:39:05.890:     frontend-tools.so
+00:39:05.890:     decklink-output-ui.so
+00:39:05.890:     decklink-captions.so
+00:39:05.890: ---------------------------------
+00:39:05.891: ---------------------------------
+00:39:05.891: Available Encoders:
+00:39:05.891:   Video Encoders:
+00:39:05.891: 	- ffmpeg_svt_av1 (SVT-AV1)
+00:39:05.891: 	- ffmpeg_aom_av1 (AOM AV1)
+00:39:05.891: 	- ffmpeg_vaapi_tex (FFmpeg VAAPI H.264)
+00:39:05.891: 	- hevc_ffmpeg_vaapi_tex (FFmpeg VAAPI HEVC)
+00:39:05.891: 	- obs_nvenc_h264_tex (NVIDIA NVENC H.264)
+00:39:05.891: 	- obs_nvenc_hevc_tex (NVIDIA NVENC HEVC)
+00:39:05.891: 	- obs_x264 (x264)
+00:39:05.891:   Audio Encoders:
+00:39:05.891: 	- ffmpeg_aac (FFmpeg AAC)
+00:39:05.891: 	- ffmpeg_opus (FFmpeg Opus)
+00:39:05.891: 	- ffmpeg_pcm_s16le (FFmpeg PCM (16 Bit))
+00:39:05.891: 	- ffmpeg_pcm_s24le (FFmpeg PCM (24 Bit))
+00:39:05.891: 	- ffmpeg_pcm_f32le (FFmpeg PCM (32 Bit Float))
+00:39:05.891: 	- ffmpeg_alac (FFmpeg ALAC (24 Bit))
+00:39:05.891: 	- ffmpeg_flac (FFmpeg FLAC (16 Bit))
+00:39:05.891: 	- libfdk_aac (libfdk AAC)
+00:39:05.891: ==== Startup complete ===============================================
+00:39:05.935: Failed to register with host portal QDBusError("org.freedesktop.portal.Error.Failed", "Could not register app ID: Connection already associated with an application ID")
+00:39:05.935: All scene data cleared
+00:39:05.935: ------------------------------------------------
+00:39:05.939: pulse-input: Server name: 'PulseAudio (on PipeWire 1.6.7) 15.0.0'
+00:39:05.939: pulse-input: Audio format: s24le, 48000 Hz, 1 channels
+00:39:05.939: pulse-input: Sample format s24le not supported by OBS,using float32le instead for recording
+00:39:05.939: pulse-input: Started recording from 'alsa_input.usb-Logitech_Yeti_GX_2432SGM03DK8-00.mono-fallback' (default)
+00:39:05.939: [Loaded global audio device]: 'Mikrofon-/AUX-Audio'
+00:39:05.940: PipeWire initialized
+00:39:05.946: [pipewire-audio] Created stream 0x561bbc145590
+00:39:05.947: [pipewire-audio] Created stream 0x561bbc1ade00
+00:39:05.949: Switched to scene 'STREAM'
+00:39:05.949: ------------------------------------------------
+00:39:05.949: Loaded scenes:
+00:39:05.949: - scene 'STREAM_IN':
+00:39:05.949:     - source: 'SCREEN_IN' (image_source)
+00:39:05.949:     - source: 'AUSSER_SPOTIFY' (pipewire_audio_application_capture)
+00:39:05.949:     - source: 'SPOTIFY' (pipewire_audio_application_capture)
+00:39:05.949:     - source: 'TWITCH_ALERT' (browser_source)
+00:39:05.949: - scene 'STREAM':
+00:39:05.949:     - source: 'DESKTOP' (pipewire-screen-capture-source)
+00:39:05.949:     - source: 'AUSSER_SPOTIFY' (pipewire_audio_application_capture)
+00:39:05.949:     - source: 'SPOTIFY' (pipewire_audio_application_capture)
+00:39:05.949:     - source: 'TWITCH_ALERT' (browser_source)
+00:39:05.949: - scene 'STREAM_PAUSE':
+00:39:05.949:     - source: 'SCREEN_PAUSE' (image_source)
+00:39:05.949:     - source: 'AUSSER_SPOTIFY' (pipewire_audio_application_capture)
+00:39:05.949:     - source: 'SPOTIFY' (pipewire_audio_application_capture)
+00:39:05.949:     - source: 'TWITCH_ALERT' (browser_source)
+00:39:05.949: - scene 'STREAM_OUT':
+00:39:05.950:     - source: 'SCREEN_OUT' (image_source)
+00:39:05.950:     - source: 'AUSSER_SPOTIFY' (pipewire_audio_application_capture)
+00:39:05.950:     - source: 'SPOTIFY' (pipewire_audio_application_capture)
+00:39:05.950:     - source: 'TWITCH_ALERT' (browser_source)
+00:39:05.950: ------------------------------------------------
+00:39:06.006: [pipewire-audio] 0x561bbc145590 Got format: rate 48000 - channels 2 - format 8
+00:39:06.011: [pipewire-audio] 0x561bbc1ade00 Got format: rate 48000 - channels 2 - format 8
+00:39:06.019: adding 21 milliseconds of audio buffering, total audio buffering is now 21 milliseconds (source: SPOTIFY)
+00:39:06.019: 
+00:39:06.412: [pipewire] Screencast session created
+00:39:10.560: [pipewire] Failed to select source, denied or cancelled by user
+00:39:46.267: ==== Shutting down ==================================================
+00:39:46.270: pulse-input: Stopped recording from 'alsa_input.usb-Logitech_Yeti_GX_2432SGM03DK8-00.mono-fallback'
+00:39:46.270: pulse-input: Got 1611 packets with 1933200 frames
+00:39:46.300: All scene data cleared
+00:39:46.300: ------------------------------------------------
+00:39:46.303: Tried to call obs_frontend_remove_event_callback with no callbacks!
+00:39:46.364: [obs-websocket] [obs_module_unload] Shutting down...
+00:39:46.365: Tried to call obs_frontend_remove_event_callback with no callbacks!
+00:39:46.365: [obs-websocket] [obs_module_unload] Finished shutting down.
+00:39:46.404: [linux-vkcapture] plugin unloaded
+00:39:46.412: [Scripting] Total detached callbacks: 0
+00:39:46.412: Freeing OBS context data

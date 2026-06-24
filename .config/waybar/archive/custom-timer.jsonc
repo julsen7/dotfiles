@@ -1,0 +1,9 @@
+{
+    "custom/timer": {
+        "exec": "~/.config/waybar/timer.sh",
+        "format": "{}",
+        "return-type": "json",
+        "on-click": "~/.config/waybar/timer.sh toggle",
+        "restart-interval": 0
+    }
+}

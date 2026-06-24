@@ -1,0 +1,22 @@
+{
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-muted": "",
+        "format-icons": [
+            "",
+            "",
+            ""
+        ],
+        "on-click": "wpctl set-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "uwsm app -- kitty --title=wiremix -e wiremix"
+    },
+    "pulseaudio#source": {
+        "format": "{format_source}",
+        "format-source": "",
+        "format-source-muted": "",
+        "on-click": "wpctl set-mute @DEFAULT_SOURCE@ toggle",
+        "on-click-right": "uwsm app -- kitty --title=wiremix -e wiremix",
+        "on-scroll-up": "none",
+        "on-scroll-down": "none"
+    }
+}

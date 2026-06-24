@@ -1,0 +1,15 @@
+{
+    "hyprland/workspaces": {
+        "format": "{windows}",
+        "window-rewrite-default": "",
+        "window-rewrite": {
+            "class<chromium>": "",
+            "class<kitty>": "",
+            "class<code>": "󰨞",
+            "class<spotify>": "",
+            "class<discord>": "",
+            "class<obs>": "󱜠",
+            "title<.*youtube.*>": ""
+        }
+    }
+}

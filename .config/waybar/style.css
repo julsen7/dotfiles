@@ -3,7 +3,7 @@
 * {
   font-family: "JetBrainsMono Nerd Font Propo";
   font-size: 18px;
-  border-radius: 20px;
+  border-radius: 25px;
   color: @foreground;
 }
 
@@ -12,28 +12,45 @@
 }
 
 #custom-arch-icon,
-#hardware,
-#tray,
-#clock,
 #mpris,
 #custom-weather,
-#custom-timer,
-#custom-updates,
+#tray,
+#clock,
 #audio,
-#connections,
-#charger,
-#custom-logout {
+#bluetooth,
+#network,
+#battery {
   background-color: @background;
-  margin: 4px 4px;
-  padding: 0px 10px;
+  margin: 8px 4px;
+  padding: 4px 14px;
 }
 
-#custom-cpu,
-#custom-gpu,
-#memory,
-#bluetooth,
-#power-profiles-daemon {
-  margin-right: 15px;
+#workspaces {
+  background-color: @background;
+  margin: 8px 4px;
+  padding: 4px 6px;
+}
+
+#workspaces button {
+  background-color: transparent;
+  margin: 4px;
+  padding: 2px 14px;
+}
+
+#workspaces button.active {
+  background-color: @color7;
+}
+
+#workspaces button.active label {
+  color: @background;
+}
+
+#workspaces button:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+#workspaces button.urgent {
+  background-color: @color1;
 }
 
 #pulseaudio-slider slider {
@@ -48,36 +65,24 @@
 #pulseaudio-slider trough {
   min-height: 10px;
   min-width: 80px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  margin-left: 8px;
+  margin-right: 8px;
 }
 
 #pulseaudio-slider highlight {
   background-color: @color4;
 }
 
-#custom-arch-icon {
-  color: #1793d1;
-}
-
-#mpris {
-  color: @color5;
-}
-
 #battery.charging {
   color: #50fa7b;
 }
 
-#custom-cpu.warning,
-#custom-gpu.warning,
-#memory.warning,
-#custom-updates.has-updates,
 #battery.warning {
   color: #f1fa8c;
 }
 
-#custom-cpu.critical,
-#custom-gpu.critical,
-#memory.critical,
-#custom-updates.fw-updates,
 #battery.critical {
   color: #ff5555;
 }
