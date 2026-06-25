@@ -27,6 +27,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("uwsm app -- wl-paste --type text --watch cliphist store")
     hl.exec_cmd("uwsm app -- wl-paste --type image --watch cliphist store")
     hl.exec_cmd("uwsm app -- udiskie")
+    hl.exec_cmd("uwsm app -- snappy-switcher --daemon")
     
     hl.exec_cmd("uwsm app -- discord", { workspace = "5 silent" })
     hl.exec_cmd("uwsm app -- spotify", { workspace = "6 silent" })
@@ -44,7 +45,7 @@ hl.config({
     general = {
         border_size      = 0,
         gaps_in          = 5,
-        gaps_out         = 0,
+        gaps_out         = 10,
         resize_on_border = true,
     },
     decoration = {
@@ -63,13 +64,14 @@ hl.gesture({ fingers = 3, direction = "horizontal", action = "workspace" })
 
 local terminal    = "uwsm app -- kitty"
 local filemanager = "uwsm app -- yazi"
-local browser     = "uwsm app -- chromium"
+local browser     = "uwsm app -- zen-browser"
 local music       = "uwsm app -- spotify"
 local code        = "uwsm app -- code"
 local menu        = "uwsm app -- rofi -show drun -show-icons -theme theme"
 local colorpicker = "uwsm app -- hyprpicker -a"
 local screenshot  = "uwsm app -- hyprshot -m region --clipboard-only"
 local clipboard   = "uwsm app -- cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy"
+local lockout     = "uwsm app -- hyprlock"
 
 hl.bind("SUPER + Q", hl.dsp.exec_cmd(terminal))
 hl.bind("SUPER + E", hl.dsp.exec_cmd(terminal .. " -e " .. filemanager))
@@ -80,6 +82,7 @@ hl.bind("ALT + Space", hl.dsp.exec_cmd(menu))
 hl.bind("SUPER + P", hl.dsp.exec_cmd(colorpicker))
 hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd(screenshot))
 hl.bind("SUPER + V", hl.dsp.exec_cmd(clipboard))
+hl.bind("SUPER + L", hl.dsp.exec_cmd(lockout))
 
 hl.bind("CTRL + ALT + Delete", hl.dsp.exit())
 hl.bind("SUPER + left", hl.dsp.focus({ direction = "left" }))
@@ -90,10 +93,8 @@ hl.bind("F11", hl.dsp.window.fullscreen())
 hl.bind("ALT + F4", hl.dsp.window.close())
 hl.bind("SUPER + F", hl.dsp.window.float({ action = "toggle" }))
 hl.bind("SUPER + S", hl.dsp.layout("togglesplit"))
-hl.bind("ALT + TAB", function()
-    hl.dispatch(hl.dsp.window.cycle_next())
-    hl.dispatch(hl.dsp.window.bring_to_top())
-end)
+hl.bind("ALT + Tab", hl.dsp.exec_cmd("snappy-switcher next --mod alt"))
+hl.bind("SUPER + TAB", hl.dsp.exec_cmd("snappy-switcher next --workspace --mod super"))
 
 for i = 1, 6 do
     hl.bind("SUPER + " .. i, hl.dsp.focus({ workspace = i }))

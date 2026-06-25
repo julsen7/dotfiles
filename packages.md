@@ -106,7 +106,7 @@ github-cli
 
 ## Apps
 
-chromium
+zen-browser-bin
 discord
 spotify
 texlive-basic
@@ -137,5 +137,11 @@ piper
 # mariadb
 # openrgb
 # filezilla
-# zen-browser
 # nvim
+# kdeconnect
+# hypr-kdeconnect-fix-git
+# android-tools
+# gvfs-mtp
+# scrcpy
+# localsend
+# hyprlock

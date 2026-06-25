@@ -1,30 +1,28 @@
-# Feautures
+# Dotfiles
 
-- Dotfiles: dunst, wiremix/pipewire/wireplumber, rofi, spicetify, discord
-- bluetooth-tethering https://wiki.hypr.land/Useful-Utilities/Phone-connect/
+- rofi ~/.config/rofi/config.rasi https://github.com/davatorium/rofi
+- pipewire/wireplumber ~/.config/pipewire/ ~/.config/wireplumber/
+- dunst ~/.config/dunst/ https://github.com/dunst-project/dunst
+- spicetify https://spicetify.app/
+- discord ~/.config/discord/
+- udiskie ~/.config/udiskie/
 - snappy-switcher https://github.com/OpalAayan/snappy-switcher
-- lockscreen
-- lockout-screen
-- app-open animation
-- hyprland windows border with shadow
+- hyprlock ~/.config/hypr/hyprlock.conf https://wiki.hypr.land/Hypr-Ecosystem/hyprlock/
+- btop ~/.config/btop/ https://github.com/aristocratos/btop
+
+# Features
+
+- waybar design tooltip
+- modrinth ~/Minecraft/mein_modpack.mrpack
 - theme-selector
 - wallpaper-selector
+- bluetooth-tethering
+- kde-phone-connect und scrcpy testen
 
 # Bugs
 
 - obs: autostart von screen picker
-- zsh: entf-Taste
 
 # Other
 
 - designs: https://www.youtube.com/watch?v=xfYoN0VL9mY
-
-# Merken
-
-~/.config/dunst/: Die Einstellungen für Ihr Benachrichtigungs-System.
-~/.config/spotify-launcher.conf: Falls Sie dem Spotify-Launcher spezielle Flags (z. B. für Wayland-Support) mitgeben.
-~/.config/discord/: Nur für spezifische Client-Modifikationen interessant, sonst vernachlässigbar.
-~/Minecraft/mein_modpack.mrpack
-~/.config/udiskie/: Falls Sie automatische Mount-Optionen für USB-Sticks anpassen möchten.
-~/.config/pipewire/ oder ~/.config/wireplumber/: Nur notwendig, wenn Sie Standard-Audiogeräte oder Sample-Rates fest vordefinieren.
-~/.config/btop/: Ihr Farbschema und die Layout-Einstellungen des Systemmonitors.

@@ -3,7 +3,7 @@
         "format": "{windows}",
         "window-rewrite-default": "",
         "window-rewrite": {
-            "class<chromium>": "",
+            "class<zen>": "󰖟",
             "class<kitty>": "",
             "class<code>": "󰨞",
             "class<spotify>": "",

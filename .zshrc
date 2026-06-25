@@ -29,13 +29,11 @@ if [ -f ~/.config/zsh/wallpaper.zsh ]; then
     source ~/.config/zsh/wallpaper.zsh
 fi
 
-export STARSHIP_CONFIG=~/.config/starship/starship.toml
-export EDITOR=code
-
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 eval "$(fzf --zsh)"
 
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-export PATH=$PATH:~/.spicetify
+
+bindkey '^[[3~' delete-char
