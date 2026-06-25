@@ -1,7 +1,7 @@
 {
     "network": {
         "format": "",
-        "format-ethernet": "󰌗 {ifname}",
+        "format-ethernet": "󰌗",
         "format-wifi": " {essid}",
         "tooltip-format-ethernet": " {bandwidthDownBytes}  {bandwidthUpBytes}",
         "tooltip-format-wifi": " {bandwidthDownBytes}  {bandwidthUpBytes}|{signalStrength}%",

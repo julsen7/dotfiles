@@ -20,15 +20,16 @@ hl.monitor({
     mirror = "eDP-1"
 })
 
-
 hl.on("hyprland.start", function()
     hl.exec_cmd("gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'")
     hl.exec_cmd("gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Modern-Ice'")
     
+    hl.exec_cmd("uwsm app -- wl-paste --type text --watch cliphist store")
+    hl.exec_cmd("uwsm app -- wl-paste --type image --watch cliphist store")
     hl.exec_cmd("uwsm app -- udiskie")
     
-    hl.exec_cmd("uwsm app -- discord --start-minimized")
-    hl.exec_cmd("uwsm app -- spotify-launcher", { workspace = "5 silent" })
+    hl.exec_cmd("uwsm app -- discord", { workspace = "5 silent" })
+    hl.exec_cmd("uwsm app -- spotify", { workspace = "6 silent" })
 end)
 
 for i = 1, 3 do
@@ -41,33 +42,20 @@ end
 
 hl.config({
     general = {
-        border_size      = 3,
-        gaps_in          = 3,
+        border_size      = 0,
+        gaps_in          = 5,
         gaps_out         = 0,
-        col              = {
-            active_border   = "rgba(ffffffdd)",
-            inactive_border = "rgba(ffffff44)",
-        },
         resize_on_border = true,
     },
     decoration = {
-        rounding              = 10,
-        border_part_of_window = true,
+        rounding              = 20,
         shadow                = {
-            enabled = false,
-        },
-        glow                  = {
-            enabled = false,
+            enabled = true,
+            range = 50
         }
     },
-    animations = {
-        enabled = true,
-    },
     input = {
-        kb_layout = "de",
-    },
-    dwindle = {
-        preserve_split = true,
+        kb_layout = "de"
     },
 })
 
@@ -76,11 +64,12 @@ hl.gesture({ fingers = 3, direction = "horizontal", action = "workspace" })
 local terminal    = "uwsm app -- kitty"
 local filemanager = "uwsm app -- yazi"
 local browser     = "uwsm app -- chromium"
-local music       = "uwsm app -- spotify-launcher"
+local music       = "uwsm app -- spotify"
 local code        = "uwsm app -- code"
 local menu        = "uwsm app -- rofi -show drun -show-icons -theme theme"
 local colorpicker = "uwsm app -- hyprpicker -a"
 local screenshot  = "uwsm app -- hyprshot -m region --clipboard-only"
+local clipboard   = "uwsm app -- cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy"
 
 hl.bind("SUPER + Q", hl.dsp.exec_cmd(terminal))
 hl.bind("SUPER + E", hl.dsp.exec_cmd(terminal .. " -e " .. filemanager))
@@ -90,6 +79,7 @@ hl.bind("SUPER + C", hl.dsp.exec_cmd(code))
 hl.bind("ALT + Space", hl.dsp.exec_cmd(menu))
 hl.bind("SUPER + P", hl.dsp.exec_cmd(colorpicker))
 hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd(screenshot))
+hl.bind("SUPER + V", hl.dsp.exec_cmd(clipboard))
 
 hl.bind("CTRL + ALT + Delete", hl.dsp.exit())
 hl.bind("SUPER + left", hl.dsp.focus({ direction = "left" }))
@@ -128,26 +118,9 @@ hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = tr
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
 
-hl.curve("easeOutQuint", { type = "bezier", points = { { 0.23, 1 }, { 0.32, 1 } } })
-hl.curve("easeInOutCubic", { type = "bezier", points = { { 0.65, 0.05 }, { 0.36, 1 } } })
-hl.curve("linear", { type = "bezier", points = { { 0, 0 }, { 1, 1 } } })
-hl.curve("almostLinear", { type = "bezier", points = { { 0.5, 0.5 }, { 0.75, 1 } } })
-hl.curve("quick", { type = "bezier", points = { { 0.15, 0 }, { 0.1, 1 } } })
-hl.curve("easy", { type = "spring", mass = 1, stiffness = 71.2633, dampening = 15.8273644 })
-hl.animation({ leaf = "global", enabled = true, speed = 10, bezier = "default" })
-hl.animation({ leaf = "border", enabled = true, speed = 5.39, bezier = "easeOutQuint" })
-hl.animation({ leaf = "windows", enabled = true, speed = 4.79, spring = "easy" })
-hl.animation({ leaf = "windowsIn", enabled = true, speed = 4.1, spring = "easy", style = "popin 87%" })
-hl.animation({ leaf = "windowsOut", enabled = true, speed = 1.49, bezier = "linear", style = "popin 87%" })
-hl.animation({ leaf = "fadeIn", enabled = true, speed = 1.73, bezier = "almostLinear" })
-hl.animation({ leaf = "fadeOut", enabled = true, speed = 1.46, bezier = "almostLinear" })
-hl.animation({ leaf = "fade", enabled = true, speed = 3.03, bezier = "quick" })
-hl.animation({ leaf = "layers", enabled = true, speed = 3.81, bezier = "easeOutQuint" })
-hl.animation({ leaf = "layersIn", enabled = true, speed = 4, bezier = "easeOutQuint", style = "fade" })
-hl.animation({ leaf = "layersOut", enabled = true, speed = 1.5, bezier = "linear", style = "fade" })
-hl.animation({ leaf = "fadeLayersIn", enabled = true, speed = 1.79, bezier = "almostLinear" })
-hl.animation({ leaf = "fadeLayersOut", enabled = true, speed = 1.39, bezier = "almostLinear" })
-hl.animation({ leaf = "workspaces", enabled = true, speed = 1.94, bezier = "almostLinear", style = "fade" })
-hl.animation({ leaf = "workspacesIn", enabled = true, speed = 1.21, bezier = "almostLinear", style = "fade" })
-hl.animation({ leaf = "workspacesOut", enabled = true, speed = 1.94, bezier = "almostLinear", style = "fade" })
-hl.animation({ leaf = "zoomFactor", enabled = true, speed = 7, bezier = "quick" })
+hl.curve("easeInOutCubic", { type = "bezier", points = { { 0.65, 0 }, { 0.35, 1 } } } )
+
+hl.curve( "rubber", { type = "spring", mass = 1, stiffness = 40, dampening = 10 } )
+
+hl.animation({ leaf = "windows", enabled = true, speed = 2, bezier = "easeInOutCubic", style = "slide" })
+hl.animation({ leaf = "workspaces", enabled = true, speed = 2, spring = "rubber", style = "slide" })

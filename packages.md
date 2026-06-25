@@ -108,7 +108,7 @@ github-cli
 
 chromium
 discord
-spotify-launcher
+spotify
 texlive-basic
 visual-studio-code-bin
 modrinth-app
@@ -121,7 +121,8 @@ piper
 # obs-vkcapture
 # lib32-obs-vkcapture
 # obs-pipewire-audio-capture
-# chatterino2
+# blender
+# gimp
 
 # davinci-resolve
 # git clone https://aur.archlinux.org/davinci-resolve.git
@@ -132,8 +133,9 @@ piper
 
 ## To Try
 
-# blender
-# gimp
+# chatterino2
 # mariadb
 # openrgb
 # filezilla
+# zen-browser
+# nvim

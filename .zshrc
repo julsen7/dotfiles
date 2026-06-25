@@ -1,7 +1,5 @@
-# --- FASTFETCH ---
 fastfetch
 
-# --- ALIASES ---
 alias ls='eza --icons --group-directories-first --color=always'
 alias ll='eza -lh --icons --group-directories-first'
 alias lt='eza --tree --level=2 --icons'
@@ -9,7 +7,6 @@ alias la='eza -a --icons'
 alias lla='eza -lha --icons --group-directories-first'
 alias cd='z'
 
-# --- SETTINGS HISTORY ---
 HISTFILE=~/.zsh_history
 HISTSIZE=1000
 SAVEHIST=1000
@@ -28,12 +25,10 @@ zstyle ':completion:*' cache-path ~/.cache/zsh/
 
 typeset -U PATH path
 
-# --- FUNCTION ---
 if [ -f ~/.config/zsh/wallpaper.zsh ]; then
     source ~/.config/zsh/wallpaper.zsh
 fi
 
-# --- TOOLS & EXPORTS ---
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 export EDITOR=code
 
@@ -41,6 +36,6 @@ eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 eval "$(fzf --zsh)"
 
-# --- PLUGINS ---
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+export PATH=$PATH:~/.spicetify

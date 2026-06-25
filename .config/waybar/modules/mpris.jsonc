@@ -3,13 +3,13 @@
         "format": "{player_icon} {status_icon} {title} - {artist} <span color='#808080'>{position}|{length}</span>",
         "interval": 1,
         "max-length": 40,
-        "status-icons": {
-            "playing": "",
-            "paused": ""
-        },
         "player-icons": {
             "spotify": "󰓇",
             "chromium": ""
+        },
+        "status-icons": {
+            "playing": "",
+            "paused": ""
         }
     }
 }
