@@ -3,13 +3,13 @@
         "format": "{windows}",
         "window-rewrite-default": "",
         "window-rewrite": {
-            "class<zen>": "󰖟",
             "class<kitty>": "",
+            "class<zen>": "󰖟",
+            "title<.*youtube.*>": "",
             "class<code>": "󰨞",
             "class<spotify>": "",
             "class<discord>": "",
-            "class<obs>": "󱜠",
-            "title<.*youtube.*>": ""
+            "class<obs>": "󱜠"
         }
     }
 }
