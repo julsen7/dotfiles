@@ -115,7 +115,9 @@ github-cli
 zen-browser-bin
 discord
 spotify
-texlive-basic
+texlive
+tex-fmt
+biber
 visual-studio-code-bin
 modrinth-app
 steam

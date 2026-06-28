@@ -1,5 +1,5 @@
 wallpaper() {
-    local DIR="~/wallpaper"
+    local DIR="/home/julsen/wallpaper"
     local -a WALLS
     clear
 

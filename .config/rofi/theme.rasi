@@ -1,10 +1,10 @@
-@import "colors.rasi"
+/* @import "colors.rasi" */
 
 * {
     font: "JetBrainsMono Nerd Font Propo 12";
     border-radius: 15px;
-    background-color: @background;
-    text-color: @foreground;
+    background-color: black;
+    text-color: white;
 }
 
 window {
@@ -26,8 +26,8 @@ num-filtered-rows {
 
 entry {
     placeholder: "Search";
-    text-color: @foreground;
-    background-color: @background-alt;
+    text-color: white;
+    background-color: black;
     padding: 10px 50px;
 }
 
@@ -57,9 +57,9 @@ element-text {
 }
 
 element selected {
-    background-color: @foreground;
+    background-color: white;
 }
 
 element-text selected {
-    text-color: @background;
+    text-color: black;
 }

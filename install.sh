@@ -81,10 +81,10 @@ systemctl --user enable hyprpolkitagent.service
 systemctl --user enable waybar.service
 systemctl --user enable hyprpaper.service
 
-echo "==> Activating waybar scripts"
+echo "==> Activating waybar scripts ..."
 if [ -d "$DOTFILES_DIR/.config/waybar" ]; then
     cd "$DOTFILES_DIR/.config/waybar"
-    chmod +x weather.sh timer.sh check-updates.sh install-updates.sh 2>/dev/null || echo "Warning: Some scripts are missing!"
+    chmod +x weather.sh 2>/dev/null || echo "Warning: Some scripts are missing!"
 fi
 
 cd "$DOTFILES_DIR"
@@ -103,6 +103,10 @@ if [ -n "$WALLPAPER_PATH" ] && [ -f "$WALLPAPER_PATH" ]; then
 else
     echo "Warning: No wallpaper found in $DOTFILES_DIR/wallpapers/"
 fi
+
+echo "==> Configuring Spicetify ..."
+sudo chmod a+wr /opt/spotify
+sudo chmod a+wr /opt/spotify/Apps -R
 
 echo "===================================== "
 echo " Installation finished! Please reboot."

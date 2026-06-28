@@ -4,7 +4,7 @@
   font-family: "JetBrainsMono Nerd Font Propo";
   font-size: 16px;
   border-radius: 20px;
-  color: @on_surface;
+  color: white;
 }
 
 #waybar {
@@ -15,46 +15,38 @@
 #mpris,
 #custom-weather,
 #tray,
+#tray menu,
 #workspaces,
 #clock,
 #audio,
 #bluetooth,
 #network,
 #battery {
-  background-color: @surface;
+  background-color: black;
   margin: 4px;
   padding: 2px 12px;
 }
 
-#tray menu {
-  background-color: @surface;
-  padding: 4px;
-}
-
 #tray menu menuitem:hover {
-  background-color: @primary_container;
+  background-color: white;
 }
 
 #tray menu menuitem:hover label {
-  color: @on_primary_container;
+  color: black;
+}
+
+#workspaces button.active {
+  background-color: white;
+}
+
+#workspaces button.active label {
+  color: black
 }
 
 #workspaces button {
   background-color: rgba(255, 255, 255, 0.1);
   margin: 4px;
   padding: 2px 12px;
-}
-
-#workspaces button.active {
-  background-color: @primary;
-}
-
-#workspaces button.active label {
-  color: @on_primary;
-}
-
-#workspaces button:hover {
-  background-color: rgba(255, 255, 255, 0.05);
 }
 
 #pulseaudio-slider slider {
@@ -69,21 +61,21 @@
 #pulseaudio-slider trough {
   min-height: 10px;
   min-width: 80px;
-  background-color: @surface_container_high;
+  background-color: gray;
 }
 
 #pulseaudio-slider highlight {
-  background-color: @primary;
+  background-color: white;
 }
 
 #battery.charging {
-  color: @tertiary;
+  color: greenyellow;
 }
 
 #battery.warning {
-  color: @error_container;
+  color: yellow;
 }
 
 #battery.critical {
-  color: @error;
+  color: red;
 }
