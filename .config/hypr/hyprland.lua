@@ -30,7 +30,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("uwsm app -- snappy-switcher --daemon")
     hl.exec_cmd("uwsm app -- awww-daemon")
     
-    hl.exec_cmd("uwsm app -- discord", { workspace = "5 silent" })
+    hl.exec_cmd("uwsm app -- discord --start-minimized" )
     hl.exec_cmd("uwsm app -- spotify", { workspace = "6 silent" })
 end)
 
@@ -68,7 +68,7 @@ local filemanager = "uwsm app -- yazi"
 local browser     = "uwsm app -- zen-browser"
 local music       = "uwsm app -- spotify"
 local code        = "uwsm app -- code"
-local menu        = "uwsm app -- rofi -show drun -show-icons -theme theme"
+local menu        = "uwsm app -- rofi -show drun -show-icons"
 local colorpicker = "uwsm app -- hyprpicker -a"
 local screenshot  = "uwsm app -- hyprshot -m region --clipboard-only"
 local clipboard   = "uwsm app -- cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy"

@@ -1,4 +1,9 @@
-/* @import "colors.rasi" */
+@theme "colors.rasi" /*? @import*/
+
+configuration {
+  modes: [ combi ];
+  combi-modes: [ window, drun, run ];
+}
 
 * {
     font: "JetBrainsMono Nerd Font Propo 12";
@@ -27,7 +32,6 @@ num-filtered-rows {
 entry {
     placeholder: "Search";
     text-color: white;
-    background-color: black;
     padding: 10px 50px;
 }
 
@@ -41,19 +45,19 @@ element {
     padding: 24px 16px;
     orientation: vertical;
     spacing: 16px;
-    background-color: transparent;
+    background-color: black;
     children: [ element-icon, element-text];
 }
 
 element-icon {
     size: 48px;
     vertical-align: 0.5;
-    background-color: inherit;
+    background-color: transparent;
 }
 
 element-text {
     horizontal-align: 0.5;
-    background-color: inherit;
+    background-color: transparent;
 }
 
 element selected {
