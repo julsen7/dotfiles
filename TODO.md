@@ -2,7 +2,6 @@
 
 ## Dotfiles
 
-- dunst ~/.config/dunst/ <https://github.com/dunst-project/dunst>
 - udiskie ~/.config/udiskie/
 - snappy-switcher <https://github.com/OpalAayan/snappy-switcher>
 - hyprlock ~/.config/hypr/hyprlock.conf <https://wiki.hypr.land/Hypr-Ecosystem/hyprlock/>
