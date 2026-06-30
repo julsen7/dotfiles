@@ -39,6 +39,7 @@ dunst
 brightnessctl
 udisks2
 udiskie
+ntfs-3g
 qt5-wayland
 qt6-wayland
 
