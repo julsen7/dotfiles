@@ -95,7 +95,7 @@ if [ -n "$WALLPAPER_PATH" ] && [ -f "$WALLPAPER_PATH" ]; then
     
     cp "$WALLPAPER_PATH" "$TARGET_WALLPAPER_DIR/Mountain.webp"
 
-    matugen image "$TARGET_WALLPAPER_DIR/Mountain.webp" -m "dark"
+    matugen image "$TARGET_WALLPAPER_DIR/Mountain.jpg" -m "dark"
 else
     echo "Warning: No wallpaper found in $DOTFILES_DIR/wallpapers/"
 fi
