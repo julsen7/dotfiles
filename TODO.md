@@ -5,7 +5,7 @@
 - snappy-switcher <https://github.com/OpalAayan/snappy-switcher>
 - hyprlock ~/.config/hypr/hyprlock.conf <https://wiki.hypr.land/Hypr-Ecosystem/hyprlock/>
 - btop ~/.config/btop/ <https://github.com/aristocratos/btop>
-- zen-browser (spaces und routes)
+- zen-browser (spaces, colors und routes)
 
 ## Features
 
