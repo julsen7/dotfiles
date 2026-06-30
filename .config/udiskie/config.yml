@@ -1,2 +1,4 @@
-program_optons:
+program_options:
   tray: true
+  file_manager: yazi
+  terminal: kitty
