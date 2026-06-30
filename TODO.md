@@ -2,30 +2,31 @@
 
 ## Dotfiles
 
-- snappy-switcher <https://github.com/OpalAayan/snappy-switcher>
 - hyprlock ~/.config/hypr/hyprlock.conf <https://wiki.hypr.land/Hypr-Ecosystem/hyprlock/>
 - btop ~/.config/btop/ <https://github.com/aristocratos/btop>
 - zen-browser (spaces, colors und routes)
 
 ## Features
 
-- theme-selector ("dark/white" & "colorful")
+- theme-selector ("black/white" & "colorful")
 - wallpaper-selector grafisch
-- hypr animationen
+- hypr animationen (spur z.b. feuerfarben beim reinsliden)
 - bluetooth-tethering
 - modrinth ~/Minecraft/mein_modpack.mrpack
 - kde-phone-connect und scrcpy testen
-- rofi: 3*4 grid aber zeilenweise
 - krita brushes
 - waybar click auf workspaces erlauben, margin gleich wie hyprland
 - vscode theming black
-- udiskie fixen (waybar rightclick & yazi at open)
+- vscode other folder-picker
+- waybar pipewire-slider left corner & tray padding
+- zsh entf-key
+- hyprland snapping with super + key
 
 ## Bugs
 
-- vscode other folder-picker
+- rgb both keyboards
+- rofi: 3*4 grid aber zeilenweise & wl-clipboard-design
 - obs: autostart von screen picker
-- waybar pipewire-slider left corner & tray padding
 
 ## Other
 

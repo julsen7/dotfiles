@@ -41,6 +41,7 @@ udisks2
 udiskie
 ntfs-3g
 libappindicator-gtk3
+libayatana-appindicator-glib
 qt5-wayland
 qt6-wayland
 
@@ -66,6 +67,7 @@ awww
 hyprpicker
 matugen
 wl-clipboard
+snappy-switcher
 hyprshot
 waybar
 kitty
