@@ -2,9 +2,9 @@
 
 ## Dotfiles
 
-- hyprlock ~/.config/hypr/hyprlock.conf <https://wiki.hypr.land/Hypr-Ecosystem/hyprlock/>
 - btop ~/.config/btop/ <https://github.com/aristocratos/btop>
 - zen-browser (spaces, colors und routes)
+- vscode theming black, settings and other folder-picker
 
 ## Features
 
@@ -12,21 +12,21 @@
 - wallpaper-selector grafisch
 - hypr animationen (spur z.b. feuerfarben beim reinsliden)
 - bluetooth-tethering
-- modrinth ~/Minecraft/mein_modpack.mrpack
-- kde-phone-connect und scrcpy testen
-- krita brushes
 - waybar click auf workspaces erlauben, margin gleich wie hyprland
-- vscode theming black
-- vscode other folder-picker
-- waybar pipewire-slider left corner & tray padding
+- waybar pipewire-slider left corner & tray colors in subsettings
+- waybar workspaces auf youtube und twitch und gthub filtern
 - zsh entf-key
 - hyprland snapping with super + key
+- kde-phone-connect und scrcpy testen
+- modrinth ~/Minecraft/mein_modpack.mrpack
+- krita brushes
 
 ## Bugs
 
 - rgb both keyboards
 - rofi: 3*4 grid aber zeilenweise & wl-clipboard-design
 - obs: autostart von screen picker
+- hyprlock reload_cmd mit dynamic background
 
 ## Other
 
