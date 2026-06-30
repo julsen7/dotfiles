@@ -2,8 +2,8 @@
 
 KITTY_DIR="$HOME/.config/kitty"
 
-BW_ICON="$HOME/blackwhite.jpg"
-COLOR_ICON="$HOME/colorful.jpg"
+BW_ICON="$HOME/Dotfiles/scripts/blackwhite.jpg"
+COLOR_ICON="$HOME/Dotfiles/scripts/colorful.jpg"
 
 themes=(
     "blackwhite\0icon\x1f${BW_ICON}"

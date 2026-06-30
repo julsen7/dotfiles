@@ -1,9 +1,10 @@
-# Ignore this file, the install script and the ly config.ini
-^\.stow-local-ignore$
-^install\.sh$
-
-# Ignore .git folder and .gitignore
+# Folders
+^/Minecraft
+^/wallpaper
+^/scripts
 \.git
 
-# Ignore all Markdown and ini files
-^.*\.md$
+# Markdown
+^packages.*
+^README.*
+^TODO.*

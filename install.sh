@@ -52,7 +52,7 @@ cd "$DOTFILES_DIR"
 stow --adopt -R .
 git reset --hard HEAD 2>/dev/null || true
 
-echo "==> Configuring ly ..."
+echo "==> Configuring ly..."
 if [ -f /etc/ly/config.ini ]; then
     sudo mkdir -p /etc/ly/
     sudo sed -i 's/^#\?\s*animation\s*=.*/animation = matrix/' /etc/ly/config.ini
@@ -76,10 +76,10 @@ systemctl --user enable wireplumber.service
 systemctl --user enable hyprpolkitagent.service 
 systemctl --user enable waybar.service
 
-echo "==> Activating scripts ..."
+echo "==> Activating scripts..."
 if [ -d "$HOME/.config/waybar/scripts" ]; then
     cd "$HOME/.config/waybar/scripts"
-    chmod +x weather.sh 2>/dev/null || echo "Warning: Some scripts are missing!"
+    chmod +x weather.sh 2>/dev/null
 fi
 sudo chmod a+wr /opt/spotify
 sudo chmod a+wr /opt/spotify/Apps -R
