@@ -2,7 +2,6 @@
 
 ## Dotfiles
 
-- udiskie ~/.config/udiskie/
 - snappy-switcher <https://github.com/OpalAayan/snappy-switcher>
 - hyprlock ~/.config/hypr/hyprlock.conf <https://wiki.hypr.land/Hypr-Ecosystem/hyprlock/>
 - btop ~/.config/btop/ <https://github.com/aristocratos/btop>
@@ -20,6 +19,7 @@
 - krita brushes
 - waybar click auf workspaces erlauben, margin gleich wie hyprland
 - vscode theming black
+- udiskie fixen (waybar rightclick & yazi at open)
 
 ## Bugs
 
