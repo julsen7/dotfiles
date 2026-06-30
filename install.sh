@@ -19,13 +19,10 @@ echo "==> Updating System-Databases..."
 sudo pacman -Syu --noconfirm
 
 echo "==> Installing yay..."
-cd /tmp
-rm -rf yay
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si --noconfirm
 cd "$DOTFILES_DIR"
-rm -rf /tmp/yay
 
 PACKAGE_FILE="packages.md"
 
@@ -47,7 +44,7 @@ while IFS= read -r line || [ -n "$line" ]; do
     [[ -z "$package" ]] && continue
 
     echo "Installing: $package"
-    yay -S --noconfirm "$package" || echo "Warning: Failed to install $package"
+    yay -S --needed --noconfirm "$package" || echo "Warning: Failed to install $package"
 done < "$PACKAGE_FILE"
 echo "All packages processed!"
 
