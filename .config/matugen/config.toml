@@ -1,4 +1,5 @@
 [config]
+variant = "blackwhite"
 
 # Wallpaper
 [config.wallpaper]
@@ -18,8 +19,8 @@ command = "awww img {{ image }} --transition-type center"
 
 [templates.kitty]
 input_path = '~/.config/matugen/templates/kitty-colors.conf'
-output_path = '~/.config/kitty/themes/Matugen.conf'
-post_hook = "kitty +kitten themes --reload-in=all Matugen"
+output_path = '~/.config/kitty/themes/colorful.conf'
+post_hook = "killall -SIGUSR1 kitty 2>/dev/null || true"
 
 [templates.rofi]
 input_path = '~/.config/matugen/templates/rofi-colors.rasi'

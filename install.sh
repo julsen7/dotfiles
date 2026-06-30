@@ -1,9 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 set -euo pipefail
 
 DOTFILES_DIR="$(dirname "$(readlink -f "$0")")"
-TARGET_WALLPAPER_DIR="/home/julsen/wallpaper"
+WALLPAPER_DIR="$HOME/wallpaper"
+PACKAGE_FILE="packages.md"
 
 echo "==> Starting Installation..."
 
@@ -23,8 +24,6 @@ git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si --noconfirm
 cd "$DOTFILES_DIR"
-
-PACKAGE_FILE="packages.md"
 
 if [ ! -f "$PACKAGE_FILE" ]; then
     echo "Error: $PACKAGE_FILE not found!"
@@ -77,11 +76,13 @@ systemctl --user enable wireplumber.service
 systemctl --user enable hyprpolkitagent.service 
 systemctl --user enable waybar.service
 
-echo "==> Activating waybar scripts ..."
-if [ -d "$DOTFILES_DIR/.config/waybar/scripts" ]; then
-    cd "$DOTFILES_DIR/.config/waybar/scripts"
+echo "==> Activating scripts ..."
+if [ -d "$HOME/.config/waybar/scripts" ]; then
+    cd "$HOME/.config/waybar/scripts"
     chmod +x weather.sh 2>/dev/null || echo "Warning: Some scripts are missing!"
 fi
+sudo chmod a+wr /opt/spotify
+sudo chmod a+wr /opt/spotify/Apps -R
 
 cd "$DOTFILES_DIR"
 
@@ -89,20 +90,17 @@ echo "==> Generating Wallpaper-Theme ..."
 WALLPAPER_PATH=$(find "$DOTFILES_DIR/wallpapers" -type f \( -name "*.webp" -o -name "*.jpg" -o -name "*.png" \) -print -quit 2>/dev/null)
 
 if [ -n "$WALLPAPER_PATH" ] && [ -f "$WALLPAPER_PATH" ]; then
-    mkdir -p "$TARGET_WALLPAPER_DIR"
+    mkdir -p "$WALLPAPER_DIR"
 
-    cp "$DOTFILES_DIR"/wallpapers/* "$TARGET_WALLPAPER_DIR/" 2>/dev/null || true
+    cp "$DOTFILES_DIR"/wallpapers/* "$WALLPAPER_DIR/" 2>/dev/null || true
     
-    cp "$WALLPAPER_PATH" "$TARGET_WALLPAPER_DIR/Mountain.webp"
+    cp "$WALLPAPER_PATH" "$WALLPAPER_DIR/Mountain.webp"
 
-    matugen image "$TARGET_WALLPAPER_DIR/Mountain.jpg" -m "dark"
+    matugen image "$WALLPAPER_DIR/Mountain.jpg" -m "dark"
 else
     echo "Warning: No wallpaper found in $DOTFILES_DIR/wallpapers/"
 fi
 
-echo "==> Configuring Spicetify ..."
-sudo chmod a+wr /opt/spotify
-sudo chmod a+wr /opt/spotify/Apps -R
 
 echo "===================================== "
 echo " Installation finished! Please reboot."

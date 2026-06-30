@@ -26,10 +26,6 @@ zstyle ':completion:*' cache-path ~/.cache/zsh/
 
 typeset -U PATH path
 
-if [ -f ~/.config/zsh/wallpaper.zsh ]; then
-    source ~/.config/zsh/wallpaper.zsh
-fi
-
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 eval "$(fzf --zsh)"
@@ -37,5 +33,5 @@ eval "$(fzf --zsh)"
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-bindkey '^[[3~' delete-charexport PATH=$PATH:~/.spicetify
+bindkey '^[[3~' delete-char
 export PATH=$PATH:~/.spicetify

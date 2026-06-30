@@ -98,6 +98,7 @@ hl.bind("SUPER + F", hl.dsp.window.float({ action = "toggle" }))
 hl.bind("SUPER + S", hl.dsp.layout("togglesplit"))
 hl.bind("ALT + TAB", hl.dsp.exec_cmd("snappy-switcher next --workspace --mod alt"))
 hl.bind("SUPER + TAB", hl.dsp.exec_cmd("~/wallpaper.sh"))
+hl.bind("SUPER + SPACE", hl.dsp.exec_cmd("~/theme.sh"))
 
 for i = 1, 6 do
     hl.bind("SUPER + " .. i, hl.dsp.focus({ workspace = i }))
