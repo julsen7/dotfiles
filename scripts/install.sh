@@ -59,6 +59,8 @@ echo "All packages processed!"
 echo "${GREEN}==>${NC} Linking Dotfiles with GNU Stow..."
 cd "$DOTFILES_DIR"
 stow --adopt -R .
+git checkout -- .
+git clean -fd
 
 echo "${GREEN}==>${NC} Configuring ly..."
 if [ -f /etc/ly/config.ini ]; then
