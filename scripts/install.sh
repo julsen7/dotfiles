@@ -20,6 +20,8 @@ echo "==> Updating System-Databases..."
 sudo pacman -Syu --noconfirm
 
 echo "==> Installing yay..."
+rm -rf yay
+cd "$HOME"
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si --noconfirm
