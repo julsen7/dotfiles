@@ -20,7 +20,7 @@ Log in as your user.
 ```bash
 sudo pacman -S --needed git base-devel
 git clone https://github.com/julsen7/Dotfiles
-cd ~/Dotfiles
+cd ~/Dotfiles/scripts
 chmod +x install.sh
 ./install.sh
 ```

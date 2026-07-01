@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-WALLPAPER_DIR="$HOME/wallpaper"
+WALLPAPER_DIR="$HOME/Dotfiles/wallpaper"
 
 if [[ ! -d "$WALLPAPER_DIR" ]]; then
     dunstify "Wallpaper Error" "Folder $WALLPAPER_DIR does not exist!" -u critical

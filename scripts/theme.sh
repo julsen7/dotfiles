@@ -6,8 +6,8 @@ BW_ICON="$HOME/Dotfiles/scripts/blackwhite.jpg"
 COLOR_ICON="$HOME/Dotfiles/scripts/colorful.jpg"
 
 themes=(
-    "blackwhite\0icon\x1f${BW_ICON}"
-    "colorful\0icon\x1f${COLOR_ICON}"
+    "Black & White\0icon\x1f${BW_ICON}"
+    "Colorful\0icon\x1f${COLOR_ICON}"
 )
 
 SELECTED_THEME=$(printf "%b\n" "${themes[@]}" | rofi -dmenu -p "Theme Selector")
