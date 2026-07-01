@@ -26,7 +26,7 @@ sudo pacman -Syu --noconfirm
 
 if ! command -v yay &> /dev/null; then
     echo "${GREEN}==>${NC} Installing yay..."
-    cd "$HOME"
+    cd "$HOME"DOTFILES_DIR
     git clone https://aur.archlinux.org/yay.git
     cd yay
     makepkg -si --noconfirm
@@ -87,12 +87,32 @@ systemctl --user enable hyprpolkitagent.service
 systemctl --user enable waybar.service
 
 echo "${GREEN}==>${NC} Activating scripts..."
-chmod +x "$DOTFILES_DIR/.config/waybar/weather.sh" 2>/dev/null
-sudo chmod a+wr /opt/spotify
-sudo chmod a+wr /opt/spotify/Apps -R
+if [ -f "$DOTFILES_DIR/.config/waybar/weather.sh" ]; then
+    chmod +x "$DOTFILES_DIR/.config/waybar/weather.sh"
+else
+    echo "${YELLOW}Warning:${NC} weather.sh not found, skipping."
+fi
+
+if [ -d /opt/spotify ]; then
+    sudo chmod a+wr /opt/spotify
+    sudo chmod -R a+wr /opt/spotify/Apps -R
+else
+    echo "${YELLOW}Warning:${NC} Spotify not installed, skipping."
+fi
+
+echo "${GREEN}==>${NC} Installing VSCode extensions..."
+if [ -f "$DOTFILES_DIR/.config/Code/extensions.txt" ]; then
+    cat "$DOTFILES_DIR/.config/Code/extensions.txt" | xargs -L 1 code --install-extension
+else
+    echo "${YELLOW}Warning:${NC} extensions.txt not found, skipping."
+fi
 
 echo "${GREEN}==>${NC} Setting Wallpaper..."
-matugen image "$WALLPAPER_DIR/Mountain.jpg" --source-color-index 0 >/dev/null 2>&1
+if [ -f "$WALLPAPER_DIR/Mountain.jpg" ]; then
+    matugen image "$WALLPAPER_DIR/Mountain.jpg" --source-color-index 0
+else
+    echo "${YELLOW}Warning:${NC} Mountain.webp not found. Theme could not be generated."
+fi
 
 echo "========================================"
 echo "  Installation finished! Please reboot  "
