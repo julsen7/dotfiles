@@ -2,7 +2,6 @@
 
 ## Dotfiles
 
-- vscode folder-picker
 - zen-browser (spaces, colors und routes)
 
 ## Features
