@@ -152,3 +152,4 @@ krita
 # nvim
 # localsend
 # audacity
+# quickshell

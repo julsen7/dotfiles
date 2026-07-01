@@ -16,11 +16,11 @@ if [[ -n "$SELECTED_THEME" ]]; then
     
     rm -f "$KITTY_DIR/current-theme.conf"
 
-    if [[ "$SELECTED_THEME" == "blackwhite" ]]; then
+    if [[ "$SELECTED_THEME" == "Black & White" ]]; then
         ln -s "$KITTY_DIR/themes/blackwhite.conf" "$KITTY_DIR/current-theme.conf"
         dunstify "Theme Selector" "Black-White theme selected" -i "$BW_ICON"
         
-    elif [[ "$SELECTED_THEME" == "colorful" ]]; then
+    elif [[ "$SELECTED_THEME" == "Colorful" ]]; then
         ln -s "$KITTY_DIR/themes/colorful.conf" "$KITTY_DIR/current-theme.conf"
         dunstify "Theme Selector" "Colorful theme selected" -i "$COLOR_ICON"
     fi
