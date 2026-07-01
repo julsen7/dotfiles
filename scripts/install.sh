@@ -9,7 +9,7 @@ NC="$(tput sgr0)"
 
 DOTFILES_DIR="$HOME/Dotfiles"
 WALLPAPER_DIR="$DOTFILES_DIR/wallpaper"
-PACKAGE_FILE="$HOME/Dotfiles/packages.md"
+PACKAGE_FILE="$DOTFILES_DIR/packages.md"
 
 echo "${GREEN}==>${NC} Starting Installation..."
 
@@ -59,7 +59,6 @@ echo "All packages processed!"
 echo "${GREEN}==>${NC} Linking Dotfiles with GNU Stow..."
 cd "$DOTFILES_DIR"
 stow --adopt -R .
-git reset --hard HEAD 2>/dev/null || true
 
 echo "${GREEN}==>${NC} Configuring ly..."
 if [ -f /etc/ly/config.ini ]; then
