@@ -3,7 +3,7 @@
 set -euo pipefail
 
 DOTFILES_DIR="$(dirname "$(readlink -f "$0")")"
-WALLPAPER_DIR="$HOME/wallpaper"
+WALLPAPER_DIR="$HOME/Dotfiles/wallpaper"
 PACKAGE_FILE="packages.md"
 
 echo "==> Starting Installation..."
