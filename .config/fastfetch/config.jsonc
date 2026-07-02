@@ -77,6 +77,10 @@
             "key": "│ {#34}  shell   {#keys}│"
         },
         {
+            "type": "packages",
+            "key": "│ {#34}󰏓  pkgs    {#keys}│"
+        },
+        {
             "type": "cpu",
             "key": "│ {#34}󰍛  cpu     {#keys}│",
             "showPeCoreCount": true

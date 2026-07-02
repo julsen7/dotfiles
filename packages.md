@@ -68,7 +68,8 @@ matugen
 wl-clipboard
 snappy-switcher
 hyprshot
-waybar
+# waybar (weil buttonclick auf workspaces wegen lua nicht geht)
+waybar-git
 kitty
 yazi
 stow

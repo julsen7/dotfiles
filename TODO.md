@@ -2,14 +2,7 @@
 
 ## Features
 
-- waybar click auf workspaces erlauben
-- waybar pipewire-slider left corner & tray colors in subsettings
-- waybar workspaces auf youtube und twitch und gthub filtern
-
 - hyprland animationen (spur z.b. feuerfarben beim reinsliden)
-- hyprland snapping with super + key
-
-- fastfetch package amount
 
 - ly background and design
 
@@ -23,7 +16,7 @@
 
 - rgb both keyboards
 - rofi: 3*4 grid aber zeilenweise & wl-clipboard-design
-- theme/wallpaper skript verbessern und fehlende apps themen
+- wallpaper-skript fehlende apps themen
 - obs: autostart von screen picker
 
 ## Other

@@ -1,6 +1,6 @@
 {
     "include": [
-        "~/.config/waybar/modules/pulseaudio.jsonc",
+        "~/.config/waybar/modules/pulseaudio.jsonc"
     ],
     "group/audio": {
         "orientation": "horizontal",

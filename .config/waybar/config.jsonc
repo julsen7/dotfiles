@@ -1,5 +1,10 @@
 {
   "layer": "top",
+  "margin-top": 10,
+  "margin-left": 10,
+  "margin-right": 10,
+  "margin-bottom": 0,
+  "spacing": 5,
   "include": [
     "~/.config/waybar/modules/custom-arch-icon.jsonc",
     "~/.config/waybar/modules/mpris.jsonc",

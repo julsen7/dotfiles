@@ -3,36 +3,44 @@
 * {
   font-family: "JetBrainsMono Nerd Font Propo";
   font-size: 16px;
-  border-radius: 20px;
   color: white;
 }
 
-#waybar {
+window#waybar {
   background-color: transparent;
 }
 
-#custom-arch-icon,
-#mpris,
-#custom-weather,
-#tray,
-#tray menu,
-#workspaces,
-#clock,
-#audio,
-#bluetooth,
-#network,
-#battery {
+.modules-left>widget>*,
+.modules-center>widget>*,
+.modules-right>widget>* {
   background-color: black;
-  margin: 10px 10px 0px 10px;
-  padding: 2px 12px;
+  padding: 0px 16px;
+  border-radius: 20px;
 }
 
-#tray menu menuitem:hover {
-  background-color: white;
+#tray menu {
+  background-color: black;
+  padding: 8px;
+  border-radius: 20px;
 }
 
-#tray menu menuitem:hover label {
-  color: black;
+#tray menuitem {
+  padding: 4px 8px;
+  border-radius: 20px;
+}
+
+#tray menuitem:hover {
+  background-color: rgba(128, 128, 128, 0.25);
+}
+
+#workspaces {
+  padding: 4px 8px;
+}
+
+#workspaces button {
+  background-color: rgba(128, 128, 128, 0.25);
+  border-radius: 20px;
+  margin: 2px;
 }
 
 #workspaces button.active {
@@ -41,12 +49,6 @@
 
 #workspaces button.active label {
   color: black
-}
-
-#workspaces button {
-  background-color: rgba(255, 255, 255, 0.1);
-  margin: 4px;
-  padding: 2px 12px;
 }
 
 #pulseaudio-slider slider {
@@ -60,12 +62,14 @@
 
 #pulseaudio-slider trough {
   min-height: 10px;
-  min-width: 80px;
-  background-color: gray;
+  min-width: 100px;
+  background-color: rgba(128, 128, 128, 0.25);
+  border-radius: 6px;
 }
 
 #pulseaudio-slider highlight {
   background-color: white;
+  border-radius: 6px;
 }
 
 #battery.charging {
