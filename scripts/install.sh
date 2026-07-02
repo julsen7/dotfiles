@@ -19,7 +19,8 @@ if [ "$EUID" -eq 0 ]; then
 fi
 
 echo "${GREEN}==>${NC} Activating Multilib-Repository..."
-sudo sed -i '/\[multilib\]/,/Include/s/^#//' /etc/pacman.conf
+sudo sed -i -e 's|dur_file_path = /etc/ly/example.dur|dur_file_path = /etc/ly/blackhole.dur|' -e 's/bigclock = null/bigclock = en/' /etc/ly/config.ini
+sudo cp "$DOTFILES_DIR/assets/blackhole.dur" "/etc/ly/blackhole.dur"
 
 echo "${GREEN}==>${NC} Updating System-Databases..."
 sudo pacman -Syu --noconfirm

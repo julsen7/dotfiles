@@ -1,7 +1,8 @@
 # Folders
+^/assets
 ^/Minecraft
-^/wallpaper
 ^/scripts
+^/wallpaper
 \.git
 
 # Markdown

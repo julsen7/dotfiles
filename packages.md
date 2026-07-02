@@ -60,6 +60,7 @@ nvidia-prime
 
 uwsm
 ly
+durdraw
 hyprland
 rofi
 awww
