@@ -4,29 +4,30 @@
   font-family: "JetBrainsMono Nerd Font Propo";
   font-size: 16px;
   color: white;
+  border-radius: 20px;
 }
 
 window#waybar {
   background-color: transparent;
 }
 
-.modules-left>widget>*,
-.modules-center>widget>*,
-.modules-right>widget>* {
+#custom-arch-icon,
+#mpris,
+#custom-weather,
+#tray,
+#clock,
+#workspaces,
+#audio,
+#bluetooth,
+#network,
+#battery {
   background-color: black;
   padding: 0px 16px;
-  border-radius: 20px;
 }
 
 #tray menu {
   background-color: black;
-  padding: 8px;
-  border-radius: 20px;
-}
-
-#tray menuitem {
   padding: 4px 8px;
-  border-radius: 20px;
 }
 
 #tray menuitem:hover {
@@ -34,13 +35,12 @@ window#waybar {
 }
 
 #workspaces {
-  padding: 4px 8px;
+  padding: 2px 4px;
 }
 
 #workspaces button {
   background-color: rgba(128, 128, 128, 0.25);
-  border-radius: 20px;
-  margin: 2px;
+  margin: 4px;
 }
 
 #workspaces button.active {
@@ -64,12 +64,10 @@ window#waybar {
   min-height: 10px;
   min-width: 100px;
   background-color: rgba(128, 128, 128, 0.25);
-  border-radius: 6px;
 }
 
 #pulseaudio-slider highlight {
   background-color: white;
-  border-radius: 6px;
 }
 
 #battery.charging {
